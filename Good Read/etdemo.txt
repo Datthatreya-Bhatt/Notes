@@ -1,0 +1,292 @@
+what is pm2
+#### PM2 Package
+PM2 (Process Manager 2) is a production process manager for Node.js applications. It allows you to keep your applications running continuously, automatically restart them if they crash, and manage them easily. PM2 also offers features like load balancing, logs facility, startup script, micro-service management, and much more. PM2 is available as an NPM package and can be installed through npm or yarn. You can use PM2 to run multiple processes of your application, which provides additional benefits like improved resiliency and availability.
+
+what is bycrypt
+	Bcrypt is a password-hashing function designed to securely store passwords by converting them into a set of random characters. It was created by Niels Provos and David Mazieres based on the Blowfish cipher and was presented at USENIX in 1999. Bcrypt algorithm uses a technique called salting to enhance the security of the stored passwords. It is designed to be a slow algorithm, which makes it more difficult for attackers to guess the original password from the hashed value. The slow nature of the algorithm ensures that brute-force attacks take longer to execute, making it a preferred choice for storing sensitive password information such as in online banking applications or other security-conscious applications.
+
+what is nginx
+	NGINX is a popular open-source software that can be used as a web server, reverse proxy, caching, load balancer, media streamer, and more. It is known for its high performance and is used by many of the busiest websites on the internet. NGINX was created by Igor Sysoev and is pronounced "engine-ex." It is a lightweight and fast web server that can also be used to serve static files. Additionally, NGINX can act as an email proxy for SMTP, POP3, and IMAP protocols.
+
+
+
+what are load balancers
+	Load balancers are devices or software that distribute incoming network traffic across a group of backend servers, also known as a server farm or server pool. Their main purpose is to ensure that all resource servers are used efficiently and that no server is overloaded, which can cause slow response times or even downtime. Load balancers act as a single point of contact for clients and distribute requests across multiple targets, improving application and service performance. Load balancers typically use predetermined patterns, known as load balancing algorithms or methods, to evenly distribute incoming network traffic across a group of backend resources or servers.
+
+what is cicd pipe line
+	CI/CD (Continuous Integration/Continuous Delivery) pipeline is a set of practices and tools used to automate the building, testing, and deployment of software changes. The pipeline helps to ensure that software changes are thoroughly tested and ready for production, while also making it easier to deliver code changes frequently, reliably, and with greater confidence. The pipeline typically includes several stages, such as building and testing the code, deploying the code to a test environment, and finally deploying the code to production. CI/CD pipelines can be set up using various tools and platforms, such as GitLab, AWS, Azure Pipelines, and GitHub Actions.
+
+what is jenkins
+	Jenkins is an open-source automation server written in Java, used to automate and manage the build, test, and deployment process of software development. It is a Continuous Integration/Continuous Delivery (CI/CD) automation software tool that enables developers to build, test, and deploy their software reliably with the help of plugins.
+
+
+
+what is sequelize transactions
+	Sequelize transactions provide a way to manage multiple database operations as a single unit of work, ensuring that either all of the operations are successfully committed to the database or none of them are.
+	Transactions are useful in scenarios where you need to maintain data consistency and integrity, especially when performing multiple database operations that depend on each other.
+
+	
+
+what is vertical and horizontal scaling
+	Vertical scaling, is the process of adding more resources, such as CPU, RAM, storage, etc., to an existing server or node to enhance its capacity to handle increased workload. In contrast, horizontal scaling, involves adding more machines or nodes to a system, which allows workload distribution across multiple devices, resulting in superior overall performance.
+
+
+what is distributed files system (s3)
+	Amazon S3 is a distributed object storage system. It is not essentially a distributed file system. The objects in S3 consist of data and metadata, and they are stored in a key-value pair format. S3 is essentially a type of NoSQL database, and it allows access to files from multiple hosts sharing via a RESTful HTTP API. S3 stores data as objects, whereas file systems store data in a hierarchical structure as files and folders.
+
+
+what aws S3, its features
+	Amazon S3 (Simple Storage Service) is a cloud-based storage service offered by AWS (Amazon Web Services). Amazon S3’s features include:
+
+	1. Scalability - With Amazon S3, you can store and retrieve any amount of data, at any time, from anywhere on the web.
+
+	2. Data Durability and Availability - It offers 99.999999999% durability and 99.99% availability. This means that your data is safe and available when you need it.
+
+	3. Security - Amazon S3 provides extensive security features and access controls to help secure your data.
+
+	4. Management - You can easily manage your data with features like versioning, lifecycle, and cross-region replication.
+
+	5. Analytics - Amazon S3 provides a variety of analytics tools that you can use to extract insights from your data.
+
+	6. Integration - It is integrated with many other AWS services like AWS Lambda, Amazon Elastic MapReduce (EMR), and Amazon CloudFront.
+
+	7. Compliance - Amazon S3 complies with various industry standards and regulations like HIPAA, GDPR, and SOC.
+
+	8. Cost-effective - Amazon S3 provides a low-cost storage solution with no upfront fees or long-term commitments.
+
+	Overall, Amazon S3 is a highly reliable and secure service that provides flexible storage options for businesses of all sizes.
+
+
+
+what is IAM role, its advantages
+	IAM (Identity and Access Management) roles are a way to manage permissions for AWS (Amazon Web Services) resources. An IAM role is an AWS identity that can be assigned a set of permissions to allow it to access AWS services and resources. The primary advantages of IAM roles include improved security by allowing the assignment of permissions based on minimum necessary access, ease of administration by centralizing permissions management, and improved auditability by allowing the tracking of all access and changes made to AWS resources. Additionally, IAM roles can be used to grant permissions to applications running on EC2 instances or to users in a federated identity system.
+
+
+	
+t-18-v-2
+sequelize offset and limit feature
+	Sequelize is a popular Object-Relational Mapping (ORM) library for Node.js that provides a convenient way to interact with SQL databases.
+
+	The `offset` option is used to specify the number of records to skip before starting to return results, while the `limit` option is used to specify the maximum number of records to return. Together, `offset` and `limit` can be used to implement pagination by dividing the total number of records into pages and returning a subset of records for each page.
+
+	Additionally, there are helper functions that can be used to simplify the process of implementing pagination in Sequelize. For example, the `findAndCountAll` method can be used to retrieve a specific number of records (`limit`) starting from a specific record index (`offset`), while also returning the total number of records that match the query.
+
+	Overall, Sequelize's `offset` and `limit` features provide a powerful way to implement pagination in Node.js applications that utilize SQL databases.
+
+
+What are environment variables and what should we use it for?
+	Environment variables are a type of variable used in computer programming and operating systems to store values that can be accessed and utilized by programs and applications. These variables can be set and modified by the user or the system and typically contain information such as paths to important directories or configuration settings.
+
+	Some of the common use cases for environment variables include storing database credentials, defining file paths, and setting application-specific configurations. By using environment variables, developers can ensure that their applications are easily configurable and maintainable without having to hardcode values into their code and can allow users to tweak the behavior of their applications without requiring any code changes.
+
+	Overall, environment variables provide a flexible and powerful way to configure and control the behavior of software applications and operating systems.
+
+What is process variable?What does process.env do?
+	In Node.js, `process` is an object that provides information about the current running process and the environment it is running in. The `process.env` property is an object that contains all the environment variables that were set when the process was started. These variables can include things like the operating system, user identity, and configuration settings. 
+
+	In simpler terms, `process.env` provides a way to access environment variables in your Node.js application. For example, if you wanted to access the value of an environment variable named `API_KEY`, you could do so with `process.env.API_KEY`.
+
+
+What are the key security things which helmet provides. Can you explain a few?
+	Helmet.js is a Node.js module that helps in securing HTTP headers. It is a recommended security best practice for Node.js web applications as it provides various middleware functions that can enhance the overall security of your app. Here are some of the key security functions provided by Helmet.js:
+
+	1. Content Security Policy (CSP): This feature is used to mitigate Cross Site Scripting (XSS) attacks. CSP allows you to specify which sources of content is considered safe to execute, and which sources should be blocked.
+
+	2. HTTP Strict Transport Security (HSTS): It helps in preventing man-in-the-middle (MITM) attacks, protocol downgrade attacks, etc. by requiring that all communication with the server is carried out over HTTPS. 
+
+	3. X-Content-Type-Options : It prevents browsers from trying to guess what type of content is being served and can also help protect against some types of attacks, such as cross-site scripting (XSS). 
+
+	4. X-XSS-Protection: It is a feature that can prevent some cross-site scripting (XSS) attacks by telling the browser to block malicious scripts. 
+
+	5. X-Frame-Options: It prevents clickjacking attacks. This header tells the browser whether or not to allow a page to be loaded in an iframe or object.
+
+	Overall, Helmet.js provides a simple and effective way to enhance the security of your Node.js web applications, and it is highly recommended that you use it in your projects.
+
+
+what is ssl/tls encryption,how does it work exactly
+	SSL/TLS encryption is a security protocol used to secure online communication and data transfer. It uses a combination of symmetric and asymmetric encryption methods to protect data in transit. 
+
+	When a user attempts to access a website with SSL/TLS enabled, their browser sends a request to the server. The server responds by sending a copy of its SSL/TLS certificate, which includes the server's public key. The user's browser verifies the server's SSL/TLS certificate and creates a one-time symmetric key to use for the communication. 
+
+	The browser encrypts data using this symmetric key and sends it to the server. The server decrypts the data with its private key and processes the request. The server also sends encrypted data back to the browser, which the browser decrypts using the same symmetric key. 
+
+	This encryption process prevents eavesdropping, tampering, and forgery of data transmitted between the client and the server. Additionally, the SSL/TLS certificate validates and verifies the identity of the server, ensuring the client is communicating with the intended recipient and not an impostor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Why is git called version controller?
+	Git is called a version control system or VCS because it allows developers to track and manage changes made to their code over time. Using Git, developers can create multiple versions of their code and review, compare, and merge these versions as needed. This helps developers to collaborate effectively on a project and ensures that changes to the codebase are properly documented and can be easily rolled back if needed. Thus, Git is a tool that provides version control and management to software development projects, making it easier to develop and maintain complex codebases.
+
+What is commit, branch and remote
+	In the context of version control systems like Git, a commit is a snapshot of the changes made to the files in a repository at a particular point in time. A branch is a parallel line of development that diverges from the main line of development (usually referred to as the "master" or "main" branch) to allow for separate work on new features or bug fixes. A remote is a copy of a repository that is hosted on a different server, allowing multiple developers to collaborate on the same codebase by pushing and pulling changes between the local and remote repositories.
+
+
+
+What does .gitignore file do?Why is it important
+	The .gitignore file is a file used in Git version control systems to tell Git which files should be intentionally untracked and ignored. It is important because it helps eliminate the accidental committing of files that should not be in the repository, such as compiled binaries and temporary files, and it also helps to keep your repository clean and organized. By using a .gitignore file, you can ensure that Git will not track and commit these unwanted files, resulting in a smaller, more manageable repository.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================================================================================================
+
+How does heroku exactly work?.
+relation ship between user and expense table (sequelize relationship)
+why jwt token to store user id
+
+put patch post difference
+t-11
+sequelize query optimisation
+sequelize table join
+
+How does the udemy trainer configure morgan? Can you explain the flow and what logs will morgan provide
+creating file stream to morgan log
+
+t-20-v-3
+What all thing should you do to prepare code for production?Explain each one of them and why we need it?
+Why should we put the port number and mongodb connection string in env variable?
+
+
+
+=====================================================================================================================
+
+what happens when switch off sever and what is ip adress
+	When a server is switched off, it becomes unavailable for use. This means that any applications or services hosted on the server will not be accessible until the server is turned back on.
+
+	An IP address is a unique numerical identifier assigned to devices connected to a network. It is used to facilitate communication between devices on the network. When data is sent between devices, it is broken down into packets that are transmitted across the network using IP addresses to identify the source and destination devices.
+
+	In general, when the server is switched off, its IP address becomes unavailable and any network services running on it will not be accessible. Other devices in the network will not be able to communicate with the server until it is turned back on and its IP address is re-established on the network.
+
+	It's important to note that IP addressing is a complex topic with many nuances and variations, including dynamic and static addressing, subnetting, DHCP, DNS, and more. If you have any specific questions about IP addressing, feel free to ask.
+
+what is blowfish algorithm
+	Blowfish is a symmetric-key block cipher encryption algorithm designed by Bruce Schneier in 1993 as an alternative to Data Encryption Standard (DES). It is significantly faster than DES and supports key lengths ranging from 32 to 448 bits). Blowfish is a variable-length, symmetric, 64-bit block cipher that encrypts data in blocks. It is a widely-used encryption algorithm that is included in many cipher suites and encryption products).
+
+what is sequelize transactions
+	Sequelize transactions provide a way to manage multiple database operations as a single unit of work, ensuring that either all of the operations are successfully committed to the database or none of them are.
+
+	Transactions are useful in scenarios where you need to maintain data consistency and integrity, especially when performing multiple database operations that depend on each other.
+
+	Here's a simple example that demonstrates the usage of Sequelize transactions:
+
+	```javascript
+	const { sequelize } = require('./models'); // Assuming you have a Sequelize instance named 'sequelize'
+
+	async function performTransaction() {
+	  const t = await sequelize.transaction(); // Start a new transaction
+
+	  try {
+	    // Perform your database operations within the transaction
+
+	    await Model1.create(data1, { transaction: t });
+	    await Model2.update(data2, { where: { id: 1 }, transaction: t });
+	    await Model3.destroy({ where: { id: 2 }, transaction: t });
+
+	    // If all operations are successful, commit the transaction
+	    await t.commit();
+
+	    console.log('Transaction committed successfully');
+	  } catch (error) {
+	    // If any operation fails, rollback the transaction
+	    await t.rollback();
+
+	    console.error('Transaction rolled back:', error);
+	  }
+	}
+
+	performTransaction();
+
+
+t-17-v-10
+what is service folder pattern and why we need it
+	The service folder pattern is a software development design pattern that helps organize and separate business logic and data access code into dedicated service modules. It is commonly used in backend applications to improve code maintainability and readability.
+
+	In the service folder pattern, you create a separate folder called "services" or "service" within your project structure. Inside this folder, you define individual service modules that encapsulate specific functionality related to your application's business logic. These services handle tasks such as data manipulation, business rules enforcement, external API integrations, and more.
+
+	The main benefits of using the service folder pattern include:
+
+	1. Modularity: Each service module focuses on a specific set of tasks, making it easier to manage and maintain the codebase.
+
+	2. Separation of Concerns: Services separate the business logic from other parts of the application, such as routes/controllers or data models.
+
+	3. Reusability: Services can be reused across different parts of the application or even in different projects, promoting code reuse and reducing duplication.
+
+	4. Testability: Services can be easily tested in isolation by mocking or stubbing their dependencies, facilitating unit testing and improving overall test coverage.
+
+	Overall, the service folder pattern helps improve code organization, readability, and maintainability by providing a clear structure for business logic implementation and separation of concerns. It promotes a modular and reusable approach to writing backend code.
+
+
+
+Why don't we push node module to git?
+	1. The `node_modules` folder can be very large and contains many files, which can clutter up your Git repository and slow down cloning and pulling of the repository.
+
+	2. The dependencies installed in `node_modules` are specific to the machine on which they were installed and may not work correctly on other machines or platforms. This means that pushing `node_modules` to Git might cause issues when the code is cloned or pulled onto a different machine with different dependencies.
+
+	3. Most Node.js projects use a package manager like npm or yarn to manage their dependencies, which makes it unnecessary to commit the `node_modules` folder to Git. Instead, you can just commit the `package.json` and `yarn.lock` files (which list the project's dependencies) and let the package manager handle installation of the dependencies.
+
+	4. It is generally considered good practice to keep dependencies separate from the project code, which makes it easier to maintain and update dependencies independently of the project code.
+
+
+What happens when we restart the server?
+	Restarting a server generally involves closing all the processes that are running and then starting them up again. Depending on the server type and software running on it, specific actions may occur when the server is restarted. Restarting a server can be useful for resolving operational errors, freeing memory, cleaning the plan cache, wiping out tempdb, ensuring the web server has picked up new applications, and more. When the server is restarted, existing connections on the server are terminated, and all the live games that are being played may be affected, depending on the server, game type, and settings. Additionally, if there are any logged-in admins when the server restarts, they will be kicked off. So, one should be careful when restarting servers.
+
+What is a server
+	A server is a computer program or piece of hardware that provides a service to another computer program, known as the client, and its users. The server can store, send, and receive data, and it offers functionality for other programs and devices connected to it through a network. Servers can be categorized by their form factor, components, and uses, such as web servers, application servers, database servers, and email servers.
+
+
+What is oneway encryption
+	One-way encryption,is a technique that converts a given input into a fixed-length string of characters (the hash), which cannot be decrypted or converted back into the original input. One-way encryption is commonly used to store passwords and other sensitive data in a secure manner. It is often referred to as a "one-way" function because it is easy to compute the hash value from the input, but it is practically impossible to reverse the process and determine the original input from the hash value.
+
+
+
+
+what is the use of process manager
+	A process manager is a tool or software that facilitates the deployment and management of processes and applications. It helps ensure the efficiency of business operations and create and implement changes or improvements when necessary. A process manager may also provide high availability and generate documentation of processes. There are different types of process managers available, such as those for web frameworks like Express, job descriptions, and business processes. Overall, a process manager helps businesses streamline their operations and improve productivity.
+	

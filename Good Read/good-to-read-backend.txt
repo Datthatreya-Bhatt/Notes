@@ -1,0 +1,624 @@
+Node js:[n=node,e=express,v=videos,]
+
+n-1
+what is node js?
+Node js is a javascript runtime environment, built on googles v8 engine. V8 is written on c++, it takes js code and converts it to machine code.
+
+n-v-1
+what is the role of node in web dev?
+[my answer]: Node js is a javascript runtime environment built upon googles v8 engine, before node js was only run on web browser, but with the help of node now node can run on any computers.It is mainly used in serverside programming.   
+
+
+n-2
+Watch this video where i explain about the difference between fat arrow functions and this keyword
+
+n-v-2-2
+what is javascript?
+[my answer]: javascript is syncronous, single threaded, event driven object oriented programing language. It is used in building dynamic web pages, servers and apps and many more.
+
+n-v-2-3
+what is pure functions?
+	A pure function is a function that always produces the same output for the same input and has no side effects. Here are the key characteristics of a pure function:
+
+	1. Deterministic: Given the same input, a pure function will always produce the same output. It does not depend on any external state that may change over time.
+
+	2. No Side Effects: A pure function does not modify or interact with external state or variables outside of its scope. It does not mutate input parameters or modify any global variables. The only result of calling a pure function is the computed return value.
+
+	3. Referential Transparency: A pure function can be replaced with its return value without affecting the correctness of the program. This property allows for easy reasoning, testing, and composition of functions.
+
+	Pure functions are valuable in functional programming because they are easier to understand, test, and reason about. Since they have no side effects, they can be parallelized and optimized more effectively. Additionally, pure functions facilitate the creation of immutable data structures, which leads to more predictable and maintainable code.
+
+	Here's an example of a pure function:
+
+	```javascript
+	function add(a, b) {
+	  return a + b;
+	}
+	```
+	The `add` function takes two parameters `a` and `b` and returns their sum. It always produces the same output for the same input, and it does not modify any external state.
+
+
+
+
+
+
+
+
+
+What is impure function in js?
+
+	An impure function in JavaScript is a function that contains one or more side effects. It mutates data outside of its lexical scope and does not predictably produce the same output for the same input. Impure functions can have side effects such as modifying variables outside of their scope, making HTTP requests, printing to the console, manipulating the DOM, generating random numbers, and more.
+
+	Here are a few examples of impure functions in JavaScript:
+
+	Example 1:
+	```javascript
+	var count = 0;
+	function increaseCount(val) {
+	  count += val;
+	}
+	```
+	In this example, the `increaseCount` function has a side effect on the `count` variable, which is declared outside of its scope. It modifies the value of `count` each time it is called.
+
+	Example 2:
+	```javascript
+	function getRandomNumber() {
+	  return Math.floor(Math.random() * 10);
+	}
+	```
+	In this example, the `getRandomNumber` function generates a random number between 0 and 9 each time it is called. This is a side effect because the function can have different outputs even with the same input.
+
+	Example 3:
+	```javascript
+	const myNames = ["Oluwatobi", "Sofela"];
+	function updateMyName(newName) {
+	  myNames.push(newName);
+	  return myNames;
+	}
+	```
+	In this example, the `updateMyName` function mutates the `myNames` array by adding a new name to it. This is a side effect because it modifies the external state of the `myNames` array.
+
+	It's important to note that JavaScript doesn't strictly adhere to rigorous notions of function purity and immutability. In many cases, impure functions are necessary to modify the state of JavaScript variables. However, understanding the concepts of pure and impure functions can help you write more predictable and maintainable code.
+
+
+
+
+
+
+
+
+
+n-3
+1.[Watch video 7 from this link] - Understand array.map watching the code.
+
+2.Take an array = ['apple', 'oranges' , ' ', 'mango', ' ' , 'lemon]. Transform it into ['apple', 'oranges' , 'empty string', 'mango', 'empty string', 'lemon] using array maps.
+
+3.How is hobbies const and it still doesnt error out when we add new elements to the array as in the video.
+[Watch video 8 from this link] - What according to you is spread opertor. Does spread operator create a new object or point to the same old object?
+4.What is rest operator. [Watch video 9 and 10 from the same link above and understand it in detail]
+5.what is array, rest and spread operator?
+
+n-4
+What does destructuring do exactly. When would you use it?
+
+n-5
+Challenge
+Can you make the above code print in the following sequence using promises and async/await. Write the code and paste it here
+Expected Output
+a
+b
+c
+d
+e
+
+n-6
+1.Explain how does the internet work in your own words.
+
+2.What are the core modules of node js?
+	In Node.js, core modules are modules that are built-in and don't require any installation or configuration. These modules are part of the Node.js installation and can be used in any Node.js application without the need to install any additional libraries or dependencies. Some of the core modules in Node.js include:
+
+	- fs (file system)
+	- http
+	- path
+	- url
+	- os
+	- querystring
+	- crypto
+	- util
+
+	These core modules provide a wide variety of functionality that can be used to develop Node.js applications, such as handling file operations, working with HTTP requests and responses, manipulating file paths and URLs, and accessing information about the operating system and environment.
+
+
+3.Explain the use of each one of them in detail.
+	The core modules in Node.js such as fs, http, path, url and os are built-in modules that Node.js provides out-of-the-box without requiring manual installation or configuration. These modules provide a wide range of functionality that can be used in Node.js applications without the need for external libraries or dependencies:
+
+	- fs (file system): This module is used for interacting with the file system to perform file operations like read, write, update and delete files.
+
+	- http: This module is used to create and handle HTTP servers and clients.
+
+	- path: This module is used to manipulate file paths and directory paths in a cross-platform way. It provides functions for joining and resolving file paths and directory paths.
+
+	- url: This module is used to parse and construct URLs (Uniform Resource Locators).
+
+	- os: This module provides a way to access and interact with information about the current operating system, such as OS type, machine architecture, hostname, memory usage, CPU usage, and more.
+
+	Overall, these core modules are the building blocks that developers can use to create more complex applications and perform common operations in Node.js while not having to worry about external library setup or configuration.
+
+
+4.What are relative path and absolute path? How to define them?
+	In computing, an absolute path is a path that specifies the exact location of a file or directory in a file system relative to the root directory. The root directory is the starting point of the file system, and an absolute path always begins with a forward slash (/) to denote the root directory.
+
+	For example, in a Unix-like file system, the absolute path for a file named "example.txt" located in a directory named "Documents" in the user's home directory would be: "/home/username/Documents/example.txt"
+
+	On the other hand, a relative path is a path that specifies the location of a file or directory relative to the current working directory of the user or the application. Relative paths do not start with a forward slash (/).
+
+	For example, if the user's current working directory is the home directory, the relative path to the "example.txt" file described above would be: "Documents/example.txt"
+
+	In summary, the difference between an absolute path and a relative path is that an absolute path refers to the exact location of a file or directory in the file system hierarchy, while a relative path is defined in relation to the current working directory.
+
+
+5.What does createServer do?
+	The createServer() method in Node.js is used to create a new HTTP server object. It takes a requestListener function as an argument that is called every time a new HTTP request is received by the server. The requestListener function handles the request and sends a response back to the client. 
+
+	Here is an example implementation of createServer() that listens for incoming HTTP requests on port 3000 and sends the string "Hello World" back as the response: 
+
+	```javascript
+	const http = require('http');
+
+	const server = http.createServer((req, res) => {
+	  res.writeHead(200, {'Content-Type': 'text/plain'});
+	  res.end('Hello World');
+	});
+
+	server.listen(3000, () => {
+	  console.log('Server running on http://localhost:3000');
+	});
+	```
+
+	In this example, `http.createServer()` takes a callback function that takes `req` and `res` objects as arguments. The `req` object contains information about the incoming HTTP request, such as the URL, headers, and request method. The `res` object is used to send a response back to the client and contains methods to set headers, status codes, and write the response body.
+
+	By calling `server.listen()` after creating the server, the server starts listening on port 3000 and the callback function logs a message to the console indicating that the server is running.
+
+
+6.What are anonymous functions?
+	Anonymous functions, also known as lambda functions or function literals, are functions that do not have an explicitly defined name. In programming, they are often used as arguments to higher-order functions or as quick throwaway functions for a specific task where creating a named function would be overkill or impractical. 
+
+	Anonymous functions are commonly used in languages such as JavaScript, Python, and Kotlin. In JavaScript, they are defined using the `function` keyword without a name and can be stored in variables or passed as arguments to other functions. In Python, they are defined using the `lambda` keyword and can also be stored in variables or passed as arguments to other functions. In Kotlin, they are defined using the curly braces `{}` and can be used both as lambda expressions and anonymous functions.
+
+	Overall, anonymous functions provide a way to define and use functions inline without having to define them elsewhere in the code, which can make the code more concise and expressive.
+
+7.What do you think server.listens exactly do?Why do we need it?
+	`server.listen()` is a method in Node.js that is used to start the server so that it can listen for incoming requests from clients. It takes the port number the server should listen on as an argument, and optionally also a callback function that is called once the server is ready to accept requests.
+
+	In Node.js, when we create a server using `http.createServer()`, the server is not actually listening for incoming requests until `server.listen()` is called. Calling this method puts the server in a listening state so that it can begin to handle client requests.
+
+	For example, if we have a server created using `http.createServer()`, we can start listening for incoming requests on port 3000 as follows:
+
+	```
+	const http = require('http');
+
+	const server = http.createServer((req, res) => {
+	  // handle incoming requests
+	});
+
+	server.listen(3000, () => {
+	  console.log('Server is listening on port 3000');
+	});
+	```
+
+	In this example, `server.listen()` is called with the port number 3000, which means the server will start listening for incoming requests on port 3000. The optional callback function passed as the second argument is used to log a message to the console once the server is ready to accept requests.
+
+	Overall, `server.listen()` is an important method in Node.js that allows us to start listening for incoming requests on a specific port so that we can process them and send responses back to clients.
+
+
+n-v-6-3
+1.Explain the nodejs event driven architecture.
+	Event-driven architecture is a key feature of Node.js, which involves the use of an event loop to handle asynchronous I/O operations. In this architecture, Node.js creates various objects and APIs that can emit events, and these events are handled by event listeners that are registered with those objects.
+
+	Every time an event is emitted, Node.js adds it to an event queue. The event loop continuously checks this queue for any new events, and calls the corresponding event listeners (also called callbacks) when it finds them. This allows Node.js to perform I/O operations in parallel, without blocking the single thread used by the application.
+
+	In this way, Node.js enables high-performance, scalable network applications by making use of non-blocking I/O. By building on top of the event-driven architecture, developers can create event-driven applications that are highly responsive to user input and can handle large volumes of traffic.
+
+	Overall, the event-driven architecture of Node.js provides a powerful tool for building asynchronous applications that can process high volumes of traffic while still being highly responsive and scalable.
+
+
+n-7
+2.How node js can basically scale to handle 1000 of requests a sec. What helps node JS even though it is single threaded?
+	Node.js can scale to handle a large number of requests per second, even though it is single-threaded, thanks to its event-driven architecture. As previously mentioned, Node.js uses an event loop to handle asynchronous I/O operations. This means that while a single thread is used to handle requests, multiple requests can be processed simultaneously because no I/O operations are blocking.
+
+	In addition, Node.js provides a module called "cluster" that allows for the creation of child processes that share server ports. This allows the server to effectively use multiple cores, taking advantage of the parallel processing power available, and further increasing the number of requests that can be handled per second.
+
+	Moreover, Node.js provides a lot of built-in libraries such as `http-parser-js` that parse and process incoming requests and responses in a very fast way. 
+
+	All these features together make it possible for Node.js servers to handle a very high number of requests per second, even with a single thread.
+
+3.What does process.exit do?
+	The `process.exit()` method in Node.js is used to force the current process to exit with a specified exit code. It terminates the Node.js runtime process and stops the execution of any further JavaScript code.
+
+	The method takes an optional exit code parameter, which is an integer that represents the exit code of the process. If no exit code is provided, the process exits with a default exit code of 0, indicating successful completion.
+
+	It is important to note that using `process.exit()` is considered a last resort since it terminates the entire Node.js runtime process. It should only be used in situations where there is no other way to end the process or when an error occurs that cannot be handled through other means, such as throwing an exception.
+
+	In general, it is recommended that you allow Node.js to exit normally when possible by letting it complete all its activities and exit on its own.
+
+4.What does req.url , req.header and req.method contain?
+	In Node.js, the `req` object represents the HTTP request that was made by the client, and it contains properties for various parts of the request. Specifically, `req.url`, `req.headers`, and `req.method` contain the following information:
+
+	- `req.url`: This property contains the URL that was requested by the client. For example, if the client sent a GET request to the server for the URL "http://example.com/path/to/resource", `req.url` would contain "/path/to/resource".
+
+	- `req.headers`: This property is an object that contains the HTTP headers that were included in the request. Each header is represented by a key-value pair in the object. For example, to access the value of the "Content-Type" header, you could use `req.headers['content-type']`.
+
+	- `req.method`: This property contains the HTTP method that was used to make the request. For example, if the request was a GET request, `req.method` would contain the string "GET".
+
+	Overall, these properties can be used to extract information from the HTTP request and then use that information to generate a response or perform other actions.
+
+n-v-7-4
+1.Explain node js event loop.
+	The event loop is a key feature of Node.js that enables it to handle asynchronous I/O operations despite the fact that JavaScript is single-threaded. In Node.js, the event loop is an event-listener that functions within the Node.js environment and is always ready to listen, process, and output for an event.
+
+	The event loop in Node.js consists of a cycle that runs as long as the Node.js application is up and running. In each cycle, the event loop processes six different queues, each with its own priority:
+
+	1. The Timer Queue: This queue contains callbacks that will be called based on the time elapsed since the timer was started.
+
+	2. The I/O Callback Queue: This queue contains callbacks for completed I/O operations, such as a read or write operation to a file.
+
+	3. The Idle Callback Queue: This queue contains callbacks that are scheduled to run during a cycle when the event loop is idle.
+
+	4. The Prepare Queue: This queue is meant for preparing any internal state before the event loop starts processing.
+
+	5. The Poll Queue: This queue handles all incoming I/O events. When an I/O event occurs, the corresponding callback is added to the queue.
+
+	6. The Check Queue: This queue contains callbacks for scheduled setImmediate() operations.
+
+	With this cycle of queues, Node.js can perform non-blocking I/O operations by offloading them to separate threads. The event loop picks up the I/O event from the Poll Queue and enqueues it to the I/O Callback Queue, where the corresponding callback function is executed asynchronously. This keeps the main thread free to handle new incoming requests while the I/O operation runs in the background.
+
+	Overall, the event loop is a critical element of Node.js and understanding how it works is essential for building scalable, high-performance Node.js applications.
+
+n-8
+1.What is the use of having buffers and streams? When would you use it?.
+	Buffers and streams are important concepts in Node.js, and each has its own unique use cases.
+
+	A Buffer is a temporary holding space for data that is being moved from one place to another, typically in binary form. Buffers are used to handle binary data, such as reading from or writing to a binary file or sending data between server and client over the network. They are implemented as a global object in Node.js and can be used to efficiently manipulate binary data.
+
+	A Stream is an abstract interface implemented by various objects in Node.js that can be used to read or write data sequentially. Streams are used to handle data that is too large to fit in memory all at once, or when data is being transmitted incrementally, such as over a network connection. There are four types of streams in Node.js: Readable, Writable, Duplex, and Transform.
+
+	To summarize, buffers and streams are both used for handling data, but they have different use cases. Buffers are used to handle binary data that needs to be manipulated, while streams are used to handle data that is too large to fit in memory or being transmitted incrementally. Understanding these concepts is essential for efficient handling of data in Node.js applications.
+
+n-v-8-10
+1.Expalin all the status codes.
+	HTTP status codes in Node.js are used to indicate the outcome of an HTTP request. Here is an overview of all the possible status codes and their meanings:
+
+	1xx Informational
+	- 100 Continue
+	- 101 Switching Protocols
+
+	2xx Success
+	- 200 OK
+	- 201 Created
+	- 202 Accepted
+	- 204 No Content
+	- 206 Partial Content
+
+	3xx Redirection
+	- 300 Multiple Choices
+	- 301 Moved Permanently
+	- 302 Found
+	- 304 Not Modified
+	- 307 Temporary Redirect
+
+	4xx Client Errors
+	- 400 Bad Request
+	- 401 Unauthorized
+	- 403 Forbidden
+	- 404 Not Found
+	- 405 Method Not Allowed
+	- 406 Not Acceptable
+	- 408 Request Timeout
+	- 409 Conflict
+	- 410 Gone
+	- 429 Too Many Requests
+	- 451 Unavailable For Legal Reasons
+
+	5xx Server Errors
+	- 500 Internal Server Error
+	- 501 Not Implemented
+	- 502 Bad Gateway
+	- 503 Service Unavailable
+	- 504 Gateway Timeout
+	- 505 HTTP Version Not Supported
+
+	In general, status codes in the 2xx range indicate success, codes in the 3xx range indicate redirection, codes in the 4xx range indicate client errors, and codes in the 5xx range indicate server errors. Understanding HTTP status codes is important for handling errors and controlling the flow of your Node.js application.
+
+2.what is parsing ?
+	Parsing is the process of analyzing a string of symbols, such as code or natural language text, according to a set of rules in order to derive its structure or meaning. In computer science, parsing is the process of breaking down a complex piece of code or input data into its constituent parts in order to facilitate interpretation and execution. This process involves analyzing the input for correct syntax, grammar, and structure, and creating a structured representation that can be used for further processing. Parsing is used in a wide range of applications, including compilers, interpreters, data analysis, natural language processing, and more.
+
+n-9
+1.Did you understand event loop ? Please explain it in your words if you did.
+2.Also try exporting in all the 3 ways and check the outp
+
+n-10
+1.What problem does nodemon solve?
+	Nodemon is a module in Node.js that solves the problem of having to manually restart a Node.js application every time a change is made to the files. Nodemon monitors the project directory for any changes and automatically restarts the application when it detects any changes, saving developers significant time and effort. This feature eliminates the need for developers to manually stop and start their server or back-end app, making development faster and more efficient.
+
+2.What is package.json file ?
+	The package.json file is a key file in Node.js applications and is used to manage the application's dependencies, configuration, and scripts. It contains metadata and information about the application such as its name, version, author, description, entry points, dependencies, and more. The file is located in the root directory of a Node.js application, and it is typically created by running the `npm init` command. The package.json file is important as it determines the dependencies that your application requires to run correctly, as well as the versions of those dependencies that are compatible with your application. It is also used to specify the scripts that automate various tasks (such as "start", "build", "test", etc) and other application configurations. In essence, the package.json file is the backbone of a Node.js application.
+
+what is package-lock.json ?
+	The `package-lock.json` file is a lockfile automatically generated by npm after running `npm install` command. It contains a record of the exact version of all the dependencies installed in the application so that it can be ensured that every developer who works on the application is using the same version of the dependencies. This file is used to lock down the versions of all the installed packages, making it easier to recreate a specific dependency state and to avoid the issues associated with installing multiple versions of a package. The `package-lock.json` file is automatically generated and it is recommended to commit it to the version control system along with the application code, so that everyone working on the project uses the same version of the dependencies.
+
+
+3.When would you use --save-dev and --save?
+	You can use the `--save` and `--save-dev` flags when installing dependencies through `npm`. 
+
+	The `--save` flag is used to save a package as a runtime dependency. This means that this package is strictly required for the application to work as intended. For example, you would use `--save` for a package like Express, which is required for a Node.js server to function properly.
+
+	On the other hand, the `--save-dev` flag is used to save a package as a development dependency. This means that this package is only required during the development process and is not necessary for the application to run when deployed to production. For example, you would use `--save-dev` for a package like Nodemon, which is used to automatically restart the server during the development process.
+
+	In general, it is a good practice to use `--save` for packages that are required for your application to function, and `--save-dev` for packages that are only required during the development process.
+
+
+
+n-10-2
+1.what is npm?
+	npm is a package manager for Node.js, which is the default package manager for the JavaScript runtime). It provides a way for developers to easily manage and share code, by allowing them to find and install packages (or libraries) written in JavaScript. npm is the world's largest software registry and contains over 2 million packages in its repository, which developers can use as building blocks for their own projects. Additionally, npm also provides a command-line interface and a wide range of tools to help developers manage their JavaScript projects, including installing/updating packages, managing dependencies, running tests, and more. Overall, npm is an essential tool for modern JavaScript development.
+
+2.what is json?
+	JSON (JavaScript Object Notation) is a lightweight and text-based data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is a language-independent format that derives its syntax from JavaScript object notation syntax, but it can be used with many programming languages. JSON is used extensively in modern web applications and APIs because of its flexibility and widespread support. It is often used to transmit data between a server and a web application or vice versa. JSON data is made up of key-value pairs, where keys are strings and values can be strings, numbers, objects, or arrays. The JSON format is designed to be simple, compact, and easy to parse.
+
+
+n-11
+types of error
+1.Syntax errors
+2.Runtime errors
+3.logical errors
+
+
+
+EXPRESS:
+what is routing
+e-1
+1.Why are we using Express JS ? Any reasons?
+	There are several reasons to use Express.js in Node.js web development:
+
+	1. Faster development process: With built-in middleware and functions, Express.js makes it easier and faster to build web applications, saving time and effort.
+
+	2. Highly customizable: Express.js is highly customizable and allows developers to configure their routes and middleware according to their needs.
+
+	3. Scalability: Express.js is known for its scalability, making it easy to handle multiple requests simultaneously and efficiently.
+
+	4. Large community and active development: Express.js has a large and active community of developers and frequent updates, making it a reliable and well-supported framework.
+
+	5. Widely used: Express.js is a popular and widely used framework, which means that many resources are available to help developers learn and use it effectively.
+
+	Overall, Express.js is a powerful and flexible framework that makes it easier to build complex web applications in Node.js. Its features and benefits make it a popular choice for developers everywhere.
+
+
+2.What are middlewares ?
+	In Express.js, middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. Middleware functions can execute any code, make changes to the request and response objects, end the request-response cycle, or call the next middleware function in the stack. Middleware functions are added to the application using the `app.use` function or `router.use` function and can be used for tasks such as authentication, logging, handling errors, and more. Middleware functions can be written in a modular way, making it easy to reuse and compose them to build complex web applications in an efficient and organized way.
+
+3.What is next used for.
+	In Express.js, the `next` function is used to pass control to the next middleware function in the application's request-response cycle. It is a function that is called within a middleware function and invokes the next middleware function in the stack. The `next` function can be used to handle errors or to execute additional logic before passing control over to the next middleware function. If `next` is not called within a middleware function, the application can become unresponsive. If the `next` function is called with an argument, it is assumed to be an error and Express.js will skip all remaining middleware functions and send the error to the client.	
+
+4.What is res.send used for?
+	In Express.js, `res.send()` is a function that is used to send an HTTP response to the client. It sends the HTTP response with the optional parameter as the response body. The response body can be in the form of a string, buffer object, JSON object or an array. `res.send()` automatically sets the Content-Type header to the appropriate value based on the type of data being sent. It is commonly used to send a basic text or HTML response back to the client.
+
+5.If i do res.send('<h1> hello to node js </h1>') . What will be the content-type header equal to.
+6.If I do res.send( { key1: value }) . What will be the content-type header equal to.
+
+
+7.What does app.listen(3000) do behind the scenes ?
+	Behind the scenes, `app.listen(3000)` in Express.js binds the application to a port and starts listening for incoming HTTP requests on that port. It creates a server object and calls its listen method, passing in the port number specified as the argument. When a request comes in through that port, the server passes the request to the appropriate middleware function based on the URL being requested. If no middleware function handles the request, the application sends a "404 Not Found" response back to the client. The `app.listen()` function also returns the created server object, which can be used for further configuration or to shut down the server.
+
+e-v-1
+1.what is express ?
+	Express is a web application framework for Node.js that provides a set of features for building web and mobile applications. It is a minimal and flexible framework that simplifies the process of creating a robust and scalable web application. Express.js provides a set of HTTP utility methods and middleware to streamline the process of building web applications in Node.js. Express.js can be used to handle the routing and rendering of views, parsing and hosting static files, authentication and authorization, error handling, and much more. It is one of the most popular Node.js frameworks and is widely used in production for a variety of web application development tasks.
+
+2.alternative to express
+	Some alternative web frameworks to Express.js for Node.js include:
+	1. Koa.js
+	2. Hapi.js
+	3. Fastify
+	4. Nest.js
+	5. Sails.js
+	These frameworks provide similar functionality to Express.js and have their own unique features and benefits. It is always recommended to evaluate multiple options before deciding on a framework, as each one has its own strengths and weaknesses that may better suit certain use cases.
+
+
+5.what is app.use?
+	In Express.js, `app.use()` is a function used to mount middleware functions in an application. It registers middleware functions that will be called for each incoming request and can modify the request and response objects, execute any code, and terminate the request-response cycle. The middleware functions are executed in the order they are registered, allowing developers to define a sequence of operations to be performed on the request before it is passed to the final route handler. `app.use()` can also be used to register middleware functions for a specific route or mount point, allowing developers to reuse middleware for multiple routes.
+
+	app.use helps us to add new middleware functions
+
+
+6.How middleware works?
+	Middleware is software that acts as an intermediate between two systems or applications to enable communication and data exchange. In the context of web development with Express.js, middleware is used to modify the incoming request or outgoing response objects, or to perform some operations on them. Middleware functions have access to the request and response objects as well as the next middleware function in the stack, allowing them to modify the request object, check for authorization, log data, and perform other tasks before passing control to the next middleware function or route handler. The middleware functions are executed in the order they are registered using the `app.use()` or `router.use()` methods, allowing developers to define a sequence of operations to be performed on the request before it is passed to the final route handler. The `next()` function is used to pass control to the next middleware function in the stack. Overall, middleware serves as a powerful and flexible mechanism for extending the functionality of web applications and enabling communication between different systems.
+
+e-2
+What is the body parser used for?
+	In Express.js, the `body-parser` middleware is used to extract the entire body portion of an incoming request stream and expose it on `req.body`. It is responsible for parsing the incoming request bodies in a middleware before delegating control to the next middleware function or end route handler. The `body-parser` middleware can handle different types of body content such as JSON, text, and URL-encoded form data, and it allows developers to access the data sent in the HTTP request body more easily. The `body-parser` middleware is not included in Express.js by default, so it needs to be installed separately using npm. Overall, the `body-parser` module serves as a useful tool for parsing and handling HTTP request data in an Express.js web application.
+
+e-3
+1.Add a page not found for cases where the route doesn't exist return a status code 404.
+
+e-5
+Add a view for returning "Page not found" with response header as 404 when user hits wrong url.
+Use path helper function (path.dir) to make ur project structure even better, so that it works on every OS possible.
+
+e-05-v-15
+what is __dirname in path module ?
+	`__dirname` is a special global variable in Node.js that represents the directory name of the current module's file. It is a part of the `path` module in Node.js and provides the absolute path of the directory that contains the currently executing file. The `__dirname` variable is frequently used in Node.js applications to access files relative to the directory of the currently executing module. For example, you could use `__dirname` in a Node.js script to load data from a JSON file located in the same directory as the script like this:
+
+	```
+	const path = require('path');
+	const fs = require('fs');
+
+	const filePath = path.join(__dirname, 'data.json');
+	const fileData = fs.readFileSync(filePath, 'utf8');
+	```
+
+	This will read the contents of the `data.json` file located in the same directory as the script defined by `__dirname`.
+
+	we use path to find path to the file irresepective of the os we are using.with the help of path.join.
+	we use express.static to serve css file statically, that means our css files are not served by any middleware functions.
+
+e-6
+1.Try to make an error404 page.
+2.what is mvc model ? Can you explain the role of Model,Views and Controller.(This is interviewer favourite question)
+
+	MVC (Model-View-Controller) is an architectural pattern commonly used in software design to separate an application into three parts:
+	 
+	1. Model: This component represents the data and defines how it is accessed and manipulated. The model communicates with the database or any external data source and encapsulates all related operations, making them accessible through a simple interface.
+
+	2. View: This component represents the presentation layer of the application and is responsible for displaying the data to the user. It interacts with the model to fetch and display data to the end user. 
+
+	3. Controller: This component acts as an intermediary between the model and the view. It responds to user input and modifies the model by performing appropriate actions. The controller takes instructions from the view and decides which part of the model should be manipulated and how the changes should be reflected in the view.
+
+	In short, the Model component handles the data-related logic, the View component is responsible for user interface (UI) and presentation logic, and the Controller component connects the two, acting as an intermediary that receives input from the View and manipulates data within the Model.
+
+	Using the MVC architecture pattern, developers can more easily break down complex applications into discrete, manageable parts and make them easier to maintain, test and modify.
+
+e-7
+1.What the hell are Models?
+	Models can refer to various things depending on the context, but in the software development context, a model is an abstraction of an actual or planned system that represents the system's essential properties. In software engineering, a model represents the software from a particular perspective, such as its structure, behavior, or relationships with other components.
+
+	In the context of application development using the MVC architecture, a model refers to the component of the application that represents the data and defines how it is accessed and manipulated. The model communicates with the database or any external data source and encapsulates all related operations, making them accessible through a simple interface.
+
+	In other contexts, the term 'model' can refer to an informative representation of an object, person, or system, which can be used to study the object's behavior or predict its outcomes.
+
+	Overall, the concept of a model is an important one in software development, as it helps developers to organize, structure, and understand complex systems by breaking them down into smaller, interconnected components.
+
+	[sharpener]: So Models like controllers is a design pattern. It is used for designing how you want to store the data.
+
+Try using the product and everything works fine. Now restart the node js process which is running in terminal. You will see all the products vanish. Why this happened? Tell me.
+Had we stored the data in file we would not have lost the data. Can you write logic to store data? Dont watch the next video and try implementing by yourself. (Hint- You have to use fs.readfile and fs.writefile) 
+
+e-8-4
+what is EJS
+
+e-v-8-4
+what is dynamic routing
+	Dynamic routing is a networking technique that allows routers to select and adjust optimal paths for data transmission based on the current network conditions and topology. Unlike static routing, which uses preconfigured routing tables that do not change unless manually updated, dynamic routing protocols use algorithms to determine the most efficient path for data traffic dynamically. These algorithms take into account factors such as link capacity, distance, and network congestion to determine the optimal path for data transmission. Dynamic routing makes networks more flexible and responsive to changes in traffic patterns, as it can automatically adapt to changes in network conditions. Examples of dynamic routing protocols include RIP, OSPF, and BGP.
+
+e-v-8-5
+what is query and param
+	In the context of web development, a query parameter is a way to pass extra information to a server through the URL. Query parameters appear at the end of a URL and are preceded by a question mark "?". They consist of key-value pairs separated by an equal sign "=", and multiple parameters are separated by an ampersand "&". The server can then use these query parameters to process a request and modify the response accordingly.
+
+	On the other hand, a path parameter (also known as a URL parameter or path variable) is a part of the URL that is used to identify a specific resource or resources. Path parameters are typically used in RESTful APIs to define the object or resource that is being requested and are identified by a name or variable surrounded by curly braces "{}". 
+
+	For example, in the URL `https://example.com/users?id=123`, `id` is a query parameter, and the value is `123`. In the URL `https://example.com/users/123`, `123` would be a path parameter indicating that the resource being requested is the user with the ID of 123.
+
+	In summary, query parameters are used to provide additional information that supports the operation of an API, while path parameters are used to identify a specific resource within an API.
+
+
+if we are using dynamic routes then we have to make sure that we are calling normal routes first than dynamic
+ex: products/delete should be placed first than products/:id beacuse js contole can move to next middleware function, otherwise only products/:id will be called when we call products/delete.
+
+
+e-10
+what is query params
+
+e-12
+Understand the following topics by reading
+
+Select
+Select Distinct
+Where
+And , OR ,NOT keywords
+
+e-13
+Insert Operation
+Null values
+Update
+Delete
+In
+Like
+
+
+e-14
+Create DB
+Drop DB
+Create table
+Drop Table
+Constraints
+Not Null
+Sql Unique
+Primary key
+Foreign Key
+Default
+Index
+Auto Increment
+
+e-15
+what is sql and nosql ?
+	SQL and NoSQL are two different types of database management systems that store, manage, and retrieve data in different ways.
+
+	SQL stands for Structured Query Language. SQL databases are relational databases that store data in tables with predefined columns and relationships between them. They use a SQL language to interact with the data, which allows users to perform queries such as SELECT, INSERT, UPDATE, and DELETE. SQL databases are widely used and well-established, with high levels of data consistency and reliability.
+
+	On the other hand, NoSQL databases are non-relational databases that store data in a less structured format such as key-value pairs, documents, or graphs. They do not rely on a fixed schema, and users can add data without worrying about the predefined structure. NoSQL databases are designed for scalability and flexibility and can handle large amounts of unstructured data.
+
+	In summary, SQL databases are good for structured data with clear relationships between them, while NoSQL databases are better suited for unstructured data where the structure can evolve over time. Both have their advantages and disadvantages, and the choice between them depends on the specific needs of the application.
+
+Tell me when should you use SQl and when No SQL
+	When to use SQL or NoSQL depends on the specific needs of the application and the features it requires. In general, SQL databases are better suited for applications with structured data and well-defined relationships between the data. They also work well when data consistency and integrity are key requirements.
+
+	On the other hand, NoSQL databases are a good option for applications with large amounts of unstructured or semi-structured data that need to be processed quickly and efficiently. NoSQL databases are also better suited for applications that require flexible data models, allowing developers to add and modify data structures without adhering to a fixed schema.
+
+	In summary, SQL databases are a more suitable option for structured data and when data consistency and integrity are important. NoSQL databases are better for scaling and handling larger volumes of unstructured data, and when the data requirements of the application are likely to change frequently.
+
+
+What is vertical and horizontal scaling.
+	Vertical scaling and horizontal scaling refer to ways of adding resources to a system to increase its capacity.
+
+	Vertical scaling (also known as scaling up) involves increasing the capacity of a single machine by adding more resources, such as CPU, RAM, or storage. This is done by upgrading the hardware components of the machine, such as adding more memory or a faster processor.
+
+	Horizontal scaling (also known as scaling out) involves adding more machines or nodes to a system to increase its capacity. This is achieved by adding more machines to a network or cluster to share the workload among them.
+
+	The choice between vertical and horizontal scaling depends on the specific needs of the system and the resources available. Vertical scaling is often more costly but may be more efficient for small-scale systems with low demand. Horizontal scaling is often more flexible and better suited for larger-scale systems with high demand and redundancy needs.
+
+	In summary, vertical scaling involves adding resources to a single machine, while horizontal scaling involves adding more machines or nodes to a system. Both strategies are used to increase the capacity and performance of a system, and the choice between them depends on the specific needs of the application and available resources.
+
+e-v-15-06
+what is the difference between mysql.createConnection and mysql.createPool.
+	The difference between `mysql.createConnection()` and `mysql.createPool()` in the mysql package for Node.js is that the former creates a single connection to the database server, while the latter creates a connection pool with multiple connections.
+
+	When `mysql.createConnection()` is called, a single TCP connection to the database server is established and returned as a `Connection` object. This connection is useful for simple low-traffic applications, but it can quickly become a bottleneck when multiple clients try to simultaneously interact with the database.
+
+	On the other hand, `mysql.createPool()` creates a pool of connections to the database server, and returns a `Pool` object. The pool maintains a certain number of idle connections that are waiting to be used. When `getConnection()` is called on the pool, a connection is taken from the pool (or a new one is created if the pool has no idle connections), and a `Connection` object is returned. Once the client is done interacting with the database, the connection is released back to the pool so that it can be reused.
+
+	In summary, `mysql.createConnection()` creates a single TCP connection to the database server, while `mysql.createPool()` creates a pool of connections that can handle multiple simultaneous clients more efficiently. The choice between the two methods depends on the specific needs of the application.
+
+e-17
+Q.1 Explain what is sequelize and the need to sequelize.
+	Sequelize is a third-party library for Node.js that is used as an Object-Relational Mapper (ORM) for relational databases such as PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server. Sequelize provides a way to convert between database objects and JavaScript objects, making it easier and more intuitive to interact with a database using Node.js.
+
+	The need for Sequelize arises from the fact that databases work using tables and rows, while Node.js primarily works with JavaScript objects. By providing an ORM, Sequelize bridges the gap between these two structures, allowing developers to interact with a database using JavaScript-based code. Sequelize also provides a variety of features that can improve the developer experience, including model definitions, migrations, data validation, and support for transactions.
+
+	Overall, Sequelize simplifies the process of working with relational databases in Node.js by providing a standardized interface for interacting with databases, reducing the amount of boilerplate code required, and providing a powerful set of features for managing database interaction.
+
+Q.2 What are different types of relations in SQL and how to implement these relations with sequelize?
+	As mentioned earlier, there are four main types of relationships in SQL: One-to-One, One-to-Many, Many-to-One, and Many-to-Many. Here's a brief explanation of each:
+
+	- One-to-One: A One-to-One relationship exists when each record in the first table can be related to only one record in the second table, and vice versa. This type of relationship is not very common, but it does occur. In Sequelize, you can define a One-to-One relationship using the `hasOne` and `belongsTo` associations.
+
+	- One-to-Many: A One-to-Many relationship exists when one record in the first table can be related to many records in the second table, but each record in the second table can be related to only one record in the first table. This type of relationship is quite common and can be found in many databases. In Sequelize, you can define a One-to-Many relationship using the `hasMany` and `belongsTo` associations.
+
+	- Many-to-One: A Many-to-One relationship is basically the opposite of a One-to-Many relationship. In this case, many records in the first table can be related to one record in the second table, but each record in the second table can be related to only one record in the first table. This type of relationship is not as common as One-to-Many, but it still has its uses. In Sequelize, you can define a Many-to-One relationship using the same `hasMany` and `belongsTo` associations.
+
+	- Many-to-Many: A Many-to-Many relationship exists when many records in the first table can be related to many records in the second table, and vice versa. This type of relationship is used when there is a many-to-many association between two entities. In Sequelize, you can define a Many-to-Many relationship using the `belongsToMany` association.
+
+	To implement these relationships using Sequelize, you can define the models for each table and specify the associations between them using the appropriate Sequelize association function, such as `hasOne`, `hasMany`, `belongsTo`, or `belongsToMany`. You can also specify additional options as needed, such as the foreign key name or the name of the association.
+
+e-19
+What the hell are pure or static functions?When do we use it?
+
+e-20
+If you are confused hasMany and belongsto read this https://sequelize.org/master/manual/assocs.html
+	Pure functions are functions that always return the same output for a given input and have no side effects, meaning they only depend on their input parameters and do not modify any external state. This makes them predictable and easy to test, as they will always produce the same output for a given input.
+
+	Static functions, on the other hand, are a type of function that belongs to a class or an object, rather than an instance of that class. They are not tied to any particular object or instance and can be called using the class name directly, rather than an instance of the class. Static functions are often used for utility functions that do not modify any state and only depend on their input parameters.
+
+	When to use pure or static functions depends on the situation. Pure functions should be used whenever possible, as they are more predictable and easier to test. Static functions are useful when we want to have a function that is related to a class or an object, but does not require any instance-specific state. They are often used as utility functions within a class or module.
+
+e-21
+
+Can you write a simple SQL query to fetch all the products in cart of user id =1;
+Can you write a simple SQL query to fetch all the users who have product id =1 in their cart

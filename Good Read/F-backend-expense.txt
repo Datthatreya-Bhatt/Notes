@@ -1,0 +1,1068 @@
+1.what are the different ways to export and import modules.
+
+2.what is circular dependencies.
+	Circular dependency occurs when two or more modules or files depend on each other directly or indirectly, creating a circular reference. In other words, module A depends on module B, and module B depends on module A, resulting in a loop of dependencies.
+
+	Here's an example to illustrate a circular dependency:
+
+	**Module A**
+	```javascript
+	const B = require('./B');
+
+	module.exports = {
+	  foo: 'Hello from A',
+	  bar: () => {
+	    console.log(B.baz());
+	  },
+	};
+	```
+
+	**Module B**
+	```javascript
+	const A = require('./A');
+
+	module.exports = {
+	  baz: () => {
+	    console.log(A.foo);
+	  },
+	};
+	```
+
+	In this example, module A depends on module B, and module B depends on module A. When either module is required, it triggers the loading of the other module, resulting in an endless loop.
+
+	Circular dependencies can cause issues such as undefined variables, unexpected behaviors, or even crashes in your application. It's generally considered best practice to avoid circular dependencies as much as possible.
+
+	To resolve circular dependencies, you can restructure your code to remove the circular reference, extract common functionality into separate modules, or use techniques like dependency injection or event-based communication to decouple the dependencies.
+
+	It's important to analyze the dependencies in your project and ensure they follow a proper and manageable structure to avoid circular dependencies.
+
+
+3.Sequalize query.
+	In Sequelize, you can perform queries using the provided models and methods. Here's an example of how to perform basic queries using Sequelize:
+
+	1. Find All Records:
+	   ```javascript
+	   Model.findAll().then((records) => {
+	     console.log(records); // Retrieved records
+	   });
+	   ```
+
+	2. Find Records with Conditions:
+	   ```javascript
+	   Model.findAll({
+	     where: {
+	       // Conditions
+	     },
+	   }).then((records) => {
+	     console.log(records); // Retrieved records that match the conditions
+	   });
+	   ```
+
+	3. Find a Single Record:
+	   ```javascript
+	   Model.findOne().then((record) => {
+	     console.log(record); // Retrieved record
+	   });
+	   ```
+
+	4. Find a Single Record with Conditions:
+	   ```javascript
+	   Model.findOne({
+	     where: {
+	       // Conditions
+	     },
+	   }).then((record) => {
+	     console.log(record); // Retrieved record that matches the conditions
+	   });
+	   ```
+
+	5. Create a Record:
+	   ```javascript
+	   Model.create({
+	     // Data for creating a new record
+	   }).then((record) => {
+	     console.log(record); // Created record
+	   });
+	   ```
+
+	6. Update a Record:
+	   ```javascript
+	   Model.update(
+	     {
+	       // Updated data
+	     },
+	     {
+	       where: {
+	         // Conditions
+	       },
+	     }
+	   ).then((result) => {
+	     console.log(result); // Number of updated rows
+	   });
+	   ```
+
+	7. Delete a Record:
+	   ```javascript
+	   Model.destroy({
+	     where: {
+	       // Conditions
+	     },
+	   }).then((result) => {
+	     console.log(result); // Number of deleted rows
+	   });
+	   ```
+
+	Note that `Model` should be replaced with the actual name of your Sequelize model. Additionally, you'll need to define your models and establish the database connection before performing these queries.
+
+
+4.Sequalize assaciations.
+
+5.include keyword in sequalize
+	The include option in Sequelize allows you to specify the associated models that you want to include in the query result. In the example, by including Expense in the include option, we are instructing Sequelize to fetch the associated expenses along with the user.
+
+	When the query is executed, Sequelize will generate a SQL query that joins the User and Expense tables based on the association and retrieves the associated expenses for the specified user. The result will include the user object along with an array of associated expenses.
+
+
+
+6.sequelize table join query 
+
+7.sequelize transactions
+	
+	UPDATE 
+		const sequelize = new Sequelize(...);
+		// Begin the transaction
+		let t = await sequelize.transaction();
+
+		try {
+		  // Define the update query
+		  await Model.update(
+		    { name: "new name" },
+		    {
+		      where: { id: 1 },
+		      // Pass the transaction object to update query
+		      transaction: t,
+		    }
+		  );
+
+		  // Commit the transaction
+		  await t.commit();
+
+		  console.log("Record updated successfully");
+		} catch (err) {
+		  // Rollback the transaction on error
+		  await t.rollback();
+
+		  console.log("Error occurred while updating the record:", err);
+		}
+
+	DELETE
+		const sequelize = new Sequelize(...);
+		// Begin the transaction
+		let t = await sequelize.transaction();
+
+		try {
+		  // Define the delete query
+		  await Model.destroy({
+		    where: { id: 1 },
+		    // Pass the transaction object to delete query
+		    transaction: t,
+		  });
+
+		  // Commit the transaction
+		  await t.commit();
+
+		  console.log("Record deleted successfully");
+		} catch (err) {
+		  // Rollback the transaction on error
+		  await t.rollback();
+
+		  console.log("Error occurred while deleting the record:", err);
+		}
+
+
+E-17-V-1
+load balancers to horizontal scaling.
+always use distributed file system to store files, so in future if traffic increases we can still serve the users fast.
+
+E-17-V-2
+
+what is iam role
+
+we use Aws S3 which is a distributed file system so all the servers can access files
+IAM User is used to distribute work among the people
+
+creating iam role
+
+S3 Features
+	fault tolerant
+	versioning
+
+
+E-17-V-3
+IAM user tutorial
+	how to login and work in aws with iam role
+
+E-17-V-4
+S3 tutorial
+	how to launch bucket
+	how to upload to bucket
+	Versioning
+S3 uses buckets, it is similar to folder or directory
+
+E-17-V-5
+how to use aws through code
+	while uploading to s3, try to do it always with iam role with minimum permission, because if root users password gets leaked it will be a problem
+	what it takes to upload file to s3 through code
+
+E-17-V-6
+uploading files to s3 through code using iam role
+
+iam user
+url: https://348920341254.signin.aws.amazon.com/console
+name :datta
+pas: datta@638
+
+
+AWS access key = AKIAVCPKF4MDLXAPWEOX
+AWS secret key = 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
+
+
+E-17-V-7
+cleaning s3 upload code
+1.how to download file from frontend
+
+E-17-V-8
+how to use promises
+
+E-17-V-9
+error handling
+*how to use transactions is it only one for one network call or for all network call 
+
+
+E-17-V-10
+services design pattern
+
+
+E-17-V-11
+video about task to do
+
+E-20
+What are environment variables and what should we use it for?
+What all thing should you do to prepare code for production?Explain each one of them and why we need it?
+Why should we put the port number and mongodb connection string in env variable?
+What is process variable?What does process.env do?
+What are the key security things which helmet provides. Can you explain a few?
+
+
+E-20-V-03
+what is environ variable
+
+E-20-V-04
+making app production ready
+
+E-20-V-05
+stripe production api
+
+E-20-V-06
+setting secure helmet
+
+E-20-V-07
+compressing packages
+
+E-20-V-08
+Logging using Morgan
+
+E-20-V-09
+No vid
+
+E-21
+What is SSL and how does it work exactly? [Favourite Interview Question]
+How does heroku exactly work?.
+Why is git called version controller?
+What is commit, branch and remote?
+What does .gitignore file do?Why is it important?
+Why don't we push node module to git?
+What happens when we restart the server?
+
+
+E-21-V-10
+what is SSL/TLS encryption
+ssl command on visual code terminal
+openssl req -nodes -new -x589 -keyout server.key -out server.cert
+
+E-21-V-11
+Deployment example with heroku
+setting env
+
+E-22-V-01
+What is a server
+
+E-22-V-02
+requirements for aws uploading(node,git,mysql);
+	1.signup for aws
+	2.Remove all secrets and move it to .env file
+	3.Launch a Server(EC2) and Configure the server(install node,sql,git)
+	4.Running your sql on different server [RDS]
+	5.Get your code from github and clone it
+	6.Run the backend (make sure env file is updated, SQL Host is RDS endpoint in .env )
+	7.create rds data base if needed
+	8.Testing
+
+E-22-V-03
+About EC2 instance
+Launching EC2
+what i security groups
+	Security group is like a group in which we specify which all the ports should be opened, and their inbound and outbound routes.
+
+E-22-V-04
+making backend ready for deployment
+
+E-22-V-05
+connecting to the new server through ssh
+
+To connect to ec2 server first Download .pem file and go to that folder and enter ssh key seen in instance connect option.
+    
+   ,     #_
+   ~\_  ####_ 
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___ 
+   ~~       V~  ''>
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+
+my ssh key
+ssh -i "ETDemo.pem" ec2-user@54.208.165.234
+
+path to etdemo
+C:\Users\dattatreya\DATTA\github\Assignments\fullstack expence tracker app\credentials
+
+
+
+
+Linux command
+pwd > present working directory
+sudo su > makes us super user
+curl
+yum 
+ls > list files
+ls -la > list all files
+mkdir > make or create directory
+rm > remove file
+rm -rf > remove file forcebly
+systemctl status nginx > to check status , here nginx is our package
+cd - >takes to home
+lsof -i :3000 > to check process running in port 3000
+
+vi > vim text editor maybe
+
+i > to edit file in vim
+:wq! > save and exit file
+q  > exit without saving
+escape > exit vim
+echo > print
+source > to initialise env to terminal > source .env
+$ > for variable like to print database name in env file which is as DB_NAME > echo $DB_NAME
+
+
+kill > to kill the process
+To kill the code 
+	kill 123
+	here 123 is our example pid user (id)
+
+
+lsof -i :3000
+	here 3000 is our port in which we are running our backend code
+
+sudo service nginx status
+
+sudo service <package name> <start, stop, status, restart>
+
+To check status
+		systemctl status nginx
+
+
+
+
+E-22-V-06
+	installing node in linux through yum @ 6:00
+
+	1.first open command prompt and go to folder where you have .pem file which you downloaded at the creation of instance(ec2)
+	2.now go to conection tab in aws instance tab and copy ec2 instance public ip adress in this example it is 54.208.165.234
+	3.now open cmd paste your ssh and ip like this ssh -i "ETDemo.pem" ec2-user@ 54.208.165.234 ,It will open ec2 in your cmd
+
+	NOTE: This instance uses Amazon linux distribution 
+
+	4.Now update packages in ec2 run  sudo yum update -y
+
+	5.To install nodejs
+	curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+	sudo yum install -y nodejs
+
+	To check version of node and npm
+	node -v
+	npm -v
+
+
+	6.To install git
+	sudo yum install git -y
+
+	To check git Version
+	git version
+
+	7.clone git repo
+
+	8.running sql on different server via aws rds
+
+	9.connect ec2 and rds via security group
+
+	10.connected mysql workbench to rds through ec2
+
+	11.opende 3000 port in ec2 to all public
+
+	12.deploying frontend to cloud
+
+	13.deploying with process manager pm2
+
+
+
+
+
+E-22-V-07
+configuring sql on new server
+	1.go to rds and launch new rds database
+	2.we attach ec2 to rds by Virtual private cloud(VPC), 
+	go to Database -> click on databse security group on VPC security group -> Edit inbound rules ->Add rule -> mysql/arora -> custom -> Ec2 security group -> save
+	3.connected mysql workbench to rds through ec2
+	open Mysql workbench->Add connection->give connection name -> select standard TCP/IP over SSH for connection method ->in parameter give ec2 public id with :22 for ssh host name -> enter ssh user name(find it in ec2 connection tab used to get ssh ip address) -> skip ssh password give ssh file -> give RDS endpoint/public id for MYSQL host name -> give RDS server port in which MYSQL is running ( default 3306) -> give RDS user name and password and test connection.
+	4.opened ec2 port to pblic via security group 
+
+
+
+
+
+E-22-V-08
+connecting db server to ec2
+
+RDS admin name = datta
+RDS pass = bezosbaldhead
+
+
+
+E-22-V-09
+connecting frontend to backend
+
+
+E-22-V-10
+deploying with process manager pm2
+what is the use of process manager
+	1.If you kill the terminal it would still work
+	2.We can see the logs 
+	3.We can see the status of our diffrent node application. 
+
+To Install pm2
+	sudo npm i -g pm2
+
+command to see the running programs in aws linux
+	lsof -i :3000
+	here 3000 is our port in which we are running our backend code
+
+To kill the code 
+	kill 123
+	here 123 is our example pid user (id)
+
+
+__/\\\\\\\\\\\\\____/\\\\____________/\\\\____/\\\\\\\\\_____         
+ _\/\\\/////////\\\_\/\\\\\\________/\\\\\\__/\\\///////\\\___         
+  _\/\\\_______\/\\\_\/\\\//\\\____/\\\//\\\_\///______\//\\\__ 
+   _\/\\\\\\\\\\\\\/__\/\\\\///\\\/\\\/_\/\\\___________/\\\/___
+    _\/\\\/////////____\/\\\__\///\\\/___\/\\\________/\\\//_____
+     _\/\\\_____________\/\\\____\///_____\/\\\_____/\\\//________
+      _\/\\\_____________\/\\\_____________\/\\\___/\\\/___________
+       _\/\\\_____________\/\\\_____________\/\\\__/\\\\\\\\\\\\\\\_
+        _\///______________\///______________\///__\///////////////__
+
+
+
+to start pm2
+	pm2 start app.js
+	here app.js is our main file 
+
+to stop pm2
+	pm2 stop all 
+
+
+
+E-22-V-11
+what is nginx
+
+Nginx is used as reverse proxy, normally in port 80 runs http and in port 443 runs https, but for now we are running our ec2 backend at port 3000 so with the help of nginx we are going to reverse proxy means divert all the request that comes to 80 or 443 to 3000.
+
+port 80 for http
+port 443 for https
+
+steps 
+1.installing nginx
+
+to install nginx
+	 $ sudo amazon-linux-extras list | grep nginx
+	  38  nginx1=latest            disabled      [ =stable ]
+
+	$ sudo amazon-linux-extras enable nginx1
+	 38  nginx1=latest            enabled      [ =stable ]
+	        
+	Now you can install:
+	$ sudo yum clean metadata
+	$ sudo yum -y install nginx
+	    
+	$ nginx -v
+	nginx version: nginx/1.16.1
+
+2.How to start nginx in aws linux
+	To start Nginx on AWS Linux, you can use the following command in your terminal:
+		
+		sudo service nginx start
+
+	This command will start the Nginx service if it is not already running. If you want to check the status of the Nginx service, you can use the following command:
+
+		sudo service nginx status
+
+	If Nginx is not installed on your instance, you can install it using the following command:
+
+		sudo yum install nginx
+	After installing Nginx, you can start the service using the first command mentioned above
+
+	To restart
+		sudo service nginx restart
+	To check status
+		systemctl status nginx
+
+
+
+3.config nginx
+	1. go to even 2 steps back from starting ec2
+	2. go to etc folder
+	3. go to nginx folder
+	4. go to conf.d folder
+	5.create new file > sudo vi expensetracker.conf > here vi for vim editor expensetracker is our new file name
+	6.paste the belowe code
+server {
+		listen 			80 default_server;
+		listen 			[::]:80 default_server;
+		server_name		localhost;
+		root           /usr/share/nginx/html;
+location / {
+			proxy_pass http://127.0.0.1:3000;
+			proxy_http_version 1.1;
+			proxy_set_header Upgrade $http_upgrade;
+			proxy_set_header Connection 'upgrade';
+			proxy_set_header Host $host;
+			proxy_cache_bypass $http_upgrade; 
+
+	}
+}
+
+
+
+
+
+E-22-V-12
+installing nginx
+ec2 port 80 opening
+configuring nginx server
+working with nginx
+
+
+E-22-V-13
+what happens when switch off sever and what is ip adress
+in deafult we have dynamic ip adress
+applying for static ip adress
+
+In amazon first we have to apply for elastic ip adress then we have to attach that elastic ip adress to our ec2.
+
+E-22-V-14
+what are load balancers used for
+
+
+E-22-V-01
+what is cicd pipe line
+
+E-22-V-02
+installing jenkins follow jenkins documentation from official website  https://www.jenkins.io/doc/tutorials/tutorial-for-installing-jenkins-on-AWS/
+
+	sudo yum update –y
+
+	sudo wget -O /etc/yum.repos.d/jenkins.repo \
+	    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+	sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+	sudo yum upgrade
+
+	sudo amazon-linux-extras install java-openjdk11 -y
+
+	sudo dnf install java-11-amazon-corretto -y
+
+	sudo yum install jenkins -y
+
+	Enable the Jenkins service to start at boot:
+	sudo systemctl enable jenkins
+
+	Start Jenkins as a service:
+	sudo systemctl start jenkins
+
+	You can check the status of the Jenkins service using the command:
+	sudo systemctl status jenkins
+
+
+
+
+open port 8080 in ec2 security group
+
+To find jenkins password https://www.jenkins.io/doc/book/system-administration/viewing-logs/
+	to see log file to get password run
+	journalctl -u jenkins.service 
+
+sudo vi /var/lib/jenkins/secrets/initialAdminPassword
+here sudo vi to open vim editor with super user and /var// is path that jenkin home page shows to collect password
+jenkin password : e0aff70626e341b48d758e41a030b816
+
+E-22-V-03
+configuring jenkins with git
+
+sudo service <package name> <start, stop, status, restart>
+
+if you get unabel to connect to jenkins server in jenkins page while trying to install plugins
+https://stackoverflow.com/questions/41055669/unable-to-connect-to-jenkins-server-amazon-linux-ami
+
+user name : datta
+pas: datta@123
+email : techkosha@gmail.com
+full name : dattab
+
+
+E-22-V-04
+configuring jenkins with git part 2, it is complete video of vid 3
+
+After installing jenkins start it in ec2
+Then in browser go to port 8080 [exmple ip adress with port 124.0.0.0:8080]
+Go to manage jenkins -> security -> crdentials -> global -> Enter your git credentials in global and save it
+Go to manage jenkins -> plugins -> download git related plugins
+Go to new item -> Enter an item name -> freestyle project -> ok -> configure build step like -> in Source Code Management tic git and enter git repo, select pass and enter branch
+Now build
+
+what is the difference between git pull and git clone
+
+
+E-22-V-05
+jenkins shell commands @ 23:06
+
+
+
+if you get this error :
+	We trust you have received the usual lecture from the local System
+	Administrator. It usually boils down to these three things:
+
+	    #1) Respect the privacy of others.
+	    #2) Think before you type.
+	    #3) With great power comes great responsibility.
+
+	For security reasons, the password you type will not be visible.
+
+	sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+	sudo: a password is required
+	Build step 'Execute shel
+
+	SOLUTION: run sudo visudo and enter jenkins ALL=(ALL) NOPASSWD:ALL in the file and save it
+	For furthur info https://stackoverflow.com/questions/74812572/jenkins-fails-a-terminal-is-required-to-read-the-password-either-use-the-s-op
+
+list of commands @ 12:00
+sudo npm install --unsafe-perm=true --allow-root
+pm2 stop all
+pm2 start app.js
+lsof -i :portnumber to see the list of running program on given port number
+
+command to run in jenkins shell
+    sudo npm install --unsafe-perm=true --allow-root
+	sudo pm2 stop all
+	sudo pm2 start app.js
+
+
+
+
+
+E-22-V-06
+jenkins complete automations using crons timer
+go to poll scm in your project and enter cron expression
+
+
+       
+   ,     #_
+   ~\_  ####_        
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___  
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+
+
+server {
+        listen          80 default_server;
+        listen          [::]:80 default_server;
+        server_name     localhost;
+        root            /usr/share/nginx/html;
+location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+   }
+}
+
+
+
+
+i have installed jenkins on aws linux
+i have opened port 8080 to public in ec2
+jenkins is active in ec2
+im using nginx proxy for port 80
+when i open my ip adress with port 8080 in browser i see jenkins page
+i logged in jenkins using password|
+it asked me to install suggested plugins
+when i click on it, it is saying An error occurred
+Unable to connect to Jenkins
+
+SOLTION :
+https://stackoverflow.com/questions/41055669/unable-to-connect-to-jenkins-server-amazon-linux-ami
+
+
+server {
+  listen 3000;
+
+  location /jenkins/ {
+    proxy_pass http://localhost:8080; 
+  }
+
+}
+
+
+
+ec2 hosted url:http://54.208.165.234/user/login
+
+
+
+server {
+  listen 3000;
+
+  location / {
+  proxy_pass http://localhost:8080;
+  proxy_set_header Host $host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+}
+
+
+
+----------------------------------revision----------------------------------
+
+t-1 to t-5
+task
+
+
+
+t-6-v-1
+What is oneway encryption
+what is blowfish algorithm
+what is bycrypt
+
+t-7
+task
+
+t-8
+relation ship between user and expense table (sequelize relationship)
+why jwt token to store user id
+a-Watch this video - After watching explain in your words why we donot directly send userID from frontend to backend
+b-Watch this video  - Explain in your words what did we do in the video to generate token?
+c-Watch this video  - Now explain how do we actually use the token sent by frontend in the backend.
+
+
+put patch post difference
+
+t-9
+razor pay intigration steps
+
+promise all
+
+t-10
+task
+
+t-11
+sequelize query optimisation
+sequelize table join
+
+t-12
+task
+
+t-13
+sequelize transaction
+
+t-14 to t-16
+task
+
+
+t-17-v-1
+what is vertical and horizontal scaling
+what is load balancer
+what is distributed files system (s3)
+
+t-17-v-2
+what aws S3, its features
+what is IAM role, its advantages
+
+t-17-v-3
+IAM user giving permissions
+
+t-17-v-4
+uploading files to s3 manually
+
+t-17-v-5
+steps to upload files to s3 through code
+
+t-17-v-6
+uploading files to s3 through code
+
+t-17-v-7
+s3 code cleanup
+
+t-17-v-8
+promise 
+
+t-17-v-9
+error handling
+
+t-17-v-10
+service folder pattern
+what is service folder
+
+t-17-v-11
+task
+
+
+t-18-v-2
+sequelize offset and limit feature
+
+t-19
+task
+
+t-20
+What are environment variables and what should we use it for?
+
+t-20-v-3
+What all thing should you do to prepare code for production?Explain each one of them and why we need it?
+
+Why should we put the port number and mongodb connection string in env variable?
+What is process variable?What does process.env do?
+
+What are the key security things which helmet provides. Can you explain a few?
+
+How does the udemy trainer configure morgan? Can you explain the flow and what logs will morgan provide
+
+
+t-20-v-4
+NODE_ENV = production
+sets express node environment to production mode
+
+t-20-v-8
+creating file stream to morgan log
+
+
+t-20-v-10
+what is ssl/tls encryption
+Intigration with the code 
+
+
+What is SSL and how does it work exactly? [Favourite Interview Question]
+
+
+How does heroku exactly work?.
+Why is git called version controller?
+What is commit, branch and remote?
+
+
+What does .gitignore file do?Why is it important?
+Why don't we push node module to git?
+What happens when we restart the server?
+
+
+
+
+
+## Path:        Development/Jenkins
+## Description: Jenkins Automation Server
+## Type:        string
+## Default:     "/var/lib/jenkins"
+## ServiceRestart: jenkins
+#
+# Directory where Jenkins store its configuration and working
+# files (checkouts, build reports, artifacts, ...).
+#
+JENKINS_HOME="/var/lib/jenkins"
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# Java executable to run Jenkins
+# When left empty, we'll try to find the suitable Java.
+#
+JENKINS_JAVA_CMD=""
+
+## Type:        string
+## Default:     "jenkins"
+## ServiceRestart: jenkins
+#
+# Unix user account that runs the Jenkins daemon
+# Be careful when you change this, as you need to update
+# permissions of $JENKINS_HOME and /var/log/jenkins,
+# and if you have already run Jenkins, potentially other
+# directories such as /var/cache/jenkins .
+#
+JENKINS_USER="jenkins"
+
+## Type:        string
+## Default: "false"
+## ServiceRestart: jenkins
+#
+# Whether to skip potentially long-running chown at the
+# $JENKINS_HOME location. Do not enable this, "true", unless
+# you know what you're doing. See JENKINS-23273.
+#
+#JENKINS_INSTALL_SKIP_CHOWN="false"
+
+## Type: string
+## Default:     "-Djava.awt.headless=true"
+## ServiceRestart: jenkins
+#
+# Options to pass to java when running Jenkins.
+#
+JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true"
+
+## Type:        integer(0:65535)
+## Default:     8080
+## ServiceRestart: jenkins
+#
+# Port Jenkins is listening on.
+# Set to -1 to disable
+#
+JENKINS_PORT="8080"
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# IP address Jenkins listens on for HTTP requests.
+# Default is all interfaces (0.0.0.0).
+#
+JENKINS_LISTEN_ADDRESS="0.0.0.0"
+
+## Type:        integer(0:65535)
+## Default:     "0.0.0.0"
+## ServiceRestart: jenkins
+#
+# HTTPS port Jenkins is listening on.
+# Default is disabled.
+#
+JENKINS_HTTPS_PORT=""
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# Path to the keystore in JKS format (as created by the JDK 'keytool').
+# Default is disabled.
+#
+JENKINS_HTTPS_KEYSTORE=""
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# Password to access the keystore defined in JENKINS_HTTPS_KEYSTORE.
+# Default is disabled.
+#
+JENKINS_HTTPS_KEYSTORE_PASSWORD=""
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# IP address Jenkins listens on for HTTPS requests.
+# Default is disabled.
+#
+JENKINS_HTTPS_LISTEN_ADDRESS=""
+
+## Type:        integer(0:65535)
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# HTTP2 port Jenkins is listening on.
+# Default is disabled.
+#
+# Notice: HTTP2 support may require additional configuration, see Winstone
+# documentation for more information.
+#
+JENKINS_HTTP2_PORT=""
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# IP address Jenkins listens on for HTTP2 requests.
+# Default is disabled.
+#
+# Notice: HTTP2 support may require additional configuration, see Winstone
+# documentation for more information.
+#
+JENKINS_HTTP2_LISTEN_ADDRESS=""
+
+## Type:        integer(1:9)
+## Default:     5
+## ServiceRestart: jenkins
+#
+# Debug level for logs -- the higher the value, the more verbose.
+# 5 is INFO.
+#
+JENKINS_DEBUG_LEVEL="5"
+
+## Type:        yesno
+## Default:     no
+## ServiceRestart: jenkins
+#
+# Whether to enable access logging or not.
+#
+JENKINS_ENABLE_ACCESS_LOG="no"
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# Pass arbitrary arguments to Jenkins.
+# Full option list: java -jar jenkins.war --help
+#
+JENKINS_ARGS=""
+
+
+
+
+
+

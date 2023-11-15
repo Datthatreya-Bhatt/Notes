@@ -1,0 +1,257 @@
+In js we can also declare variable without using any keyword, it makes this variable global and this global variable can accessed from global in node and window in browser.
+
+const declaration should be initialized with a value, but not let
+
+
+
+
+V-1-Exection context
+	Everything in js happens inside a global execution context.
+	execution context has 2 components
+	1.memory component aka variable environment
+		here variable and functions are stored as key value pairs.
+	2.code component aka thread of execution
+		code is executed line by line.
+	js is synchronous single threaded language
+
+V-2-Exection context
+
+Exection context is created in 2 phases
+1. memory creation phase
+2.code execution phase
+
+
+in first phase : js goes [scims] through the code and asigns value inside memory component,
+variables are assigned with undifined value and functions are copy pasted
+
+in second phase : js once again runs through the code again and executes code line by line.
+variables are assigned with real value and functions are executed when function invocations are noticed through new execution context(parameters are considered as variable). when the functions are completely executed execution context are deleted.
+
+execution context are created and executed inside js call stack
+inside this call stack any js is run global execution context is created and pushed inside call stack. when the whole code is executed then even this GEC is also deleted.
+
+call stack maintains the order of execution of execution context.
+call stack is aka execution context stack , program stack , control stack , runtime stack , machine stack.
+
+
+V-3-Hoisting
+
+Hoisting is a behavior in js in which we can access variable and functions even before intialising them with value without getting any error.
+It happens because even before code start executing a single line memory is allocated to each variable and functions 
+
+difference between undefined and not defned.
+
+undefined means variable exists inside memory component with undefined value.
+Not defined means variable does not exists in the memory component.
+
+Everytime we use single equall sign it considerd as variable and value after the eqaull sign is allocated to variable.
+
+Hoisting happens differently with var than it happens with let and const.
+
+
+V-4-How functions work.
+
+Var is function scoped.
+
+
+V-5-Shortest js code.
+
+window means global object in browser.
+
+Even if we dont write anything and try to execute the empty file a global execution context is created along with a window object is created , this keyword is created. At the global level this keyword refers to window object. window is global object in browser. In different engine different global object is created.
+
+Global space is nothing but anthing you write in js that is not inside a function.
+
+Any variable or function we create in global space get attached to the window object.
+
+V-6-undefined vs not defined.
+
+even before running single line of code js allocates memory to global variable and function inside the GEC. undefined is a special placeholder in js, it is allocated to a variable for the time being until the real value is assigned to the variable.
+undefined means we have allocated memory to variable and not defined means we have not allocated memory to variable and variable does not exists inside the particular scope of the code.
+
+V-7-Scope chain.
+
+scope in js directly related to lexical environment.
+scope means where you can access specific variable or a funtion in the code
+
+What is lexical scope ?
+Lexical scope refers to the visibility and accessibility of variable in a program based on their location within nested blocks of code , variable declared in an outer scope are accessible to inner scope , but reverse is not possible.
+
+
+Lexical environment is a local memory along with lexical environment of its parent.
+At global executon context level lexical enironment refers to null.
+
+whole chain of lexical environmet is known as scope chain.
+
+--------------------------------------------------------------
+When we are answering advance js questions it is important to keep in mind in which line  the control is in js code.(beacuse js executes code line by line)
+
+--------------------------------------------------------
+
+V-8-let,const and temporal dead zone.
+
+
+let and const declarations are hoisted but they are differently hoisted than var declaratons.These are hoisted in the temporal dead zone for the time being.
+
+In case of var declarations memory is allocated to variable and they are attached to window global object but in case of let and const memory is allocated to variable but they are attached to the script object. 
+
+We cannot access these let and const declared variable untill we initialise the value to them.
+
+Temporal dead zone is the time between since these let and const variables are hoisted and value assigned to them.
+
+Window means global object in browser.
+
+
+V-9-Block scope and shadowing.
+
+block is defined with { }
+block is aka compound statement.
+block is used to combine multiple js statemnt in a single group.
+we need to group these statement togather so that we can use multiple statemnt in a place where js expect one statemnt.
+
+What is block scope ??
+It refers to visibility and accessibility of variable within a specific block of code.
+let and const are block scoped and var declarations are function scoped.
+
+
+shadowing means changing the value of a variable by re declaring the same variable with different value.
+
+what is shadowing????
+Shadowing is the term used in programming in which a variable declared in certain scope has the same name as in outer scope , in this case inner scope variable shadows the outer scope variable value.
+
+for var declaration we can shadow anywhere.
+To shadow let and const declaration we use block scope and functions.
+
+what is illeagal shadowing???
+
+
+V-10-closures.
+
+closures are functions that have access to variable in their outer lexical scope, even after the outer function is returned.
+
+uses of closures
+1.currying
+2.module design pattern
+3.function like once
+4.memoize
+5.maintainig state in async world
+6.settimeouts
+7.iterators
+
+V-11-setTimeout,closures interview.
+printing i with every second problem.
+
+V-12-Interview.
+Closures Interview.
+
+V-13-First Class Finctions.
+
+What is anonymous function ?
+A function without the name is anonymous function.
+
+What are pure Functions ?
+
+
+What is Function Statement vs Function Exprssion vs Function declaration ?
+
+
+Function Statement aka Function Declaration.
+function a(){
+	console.log('hello');
+}
+
+Function Expression 
+var b = function (){
+	console.log('hello');
+}
+Assigning a function to a variable as value is known as function expression.
+
+
+Difference betweeen function Statement and function Expression is Hoisting.
+
+Use of the anonymous function is we can use it as value to variable and function.
+
+
+Named Function Expression.
+var b = function xyz(){
+	console.log('a');
+}
+b();
+xyz(); // error : xyz is not defined. Becaouse memory is not allocated to xyz. If the error was xyz is not a function then it means memory is allocated to xyz and xyz is not a function.
+
+Value(variable) given in function declaration is function parameters and value(variable) given in function invocation is function arguments.
+
+
+What are first class function or first class citizens ?
+First class functions are functions that can be treated like any other value , like it can be assigned to variable , passed as argument to another function , returned as output from other function.
+
+
+V-14-Call back functions.
+
+What is call back function.
+Callback functions are function that are paased as arguments to another function which can be executed in later time.
+if any operations blocks the call stcak it is known as blocking the main thread.
+
+Why do we need to remove event listeners  ?
+Event listeners are heavy means they consume memory, if we add lot of event listeners it will slow down our web page so we need to remove event listeners.
+
+
+V-15-Event loops.
+Js is single threaded langauage, it has one call stack this call stack is present in the js engine.Any js program is run a GEC is created and put into the call stack.
+Whenever a function invocation happens a brand new Execution context is created inside the call stack.
+Js does not have timer instead it uses web api to get timer from the broweser through this it executes asyncronous tasks.
+Some web apis are as follwos
+	1.setTimeuts
+	2.Dom api
+	3.Fetch
+	4.local storage
+	5.console
+	6.locations etc.
+Js access all these with the help of global objects(window).
+
+Event loop:
+It always checks call stack , if call stack is empty then it checks microtask queue and call back queue if they have any task then it will push that task into the call stack.
+
+Microtask queue:
+This queue has more priority than callback queue , Event loop only goes to callback queue once all the task in microtask queue is executed.
+
+What can go into the microtask queue:
+All the callback functions which comes from promises and mutation observer can come into the microtask queue (mutation observer checks if there is any changes arised in the dom tree).
+
+
+Callback queue aka task queue:
+It is a normal queue, all the callback functions other than promise and mutation observer comes to the callback queue.
+[All these callback queues and event loops and web apis are in browser.]
+
+
+V-16- js Engine.
+Js runtime environment is a conatiner which has all the things we need to run the js code. Js engine is the heart of the js runtime environment. 
+
+astexplorer.net
+
+Interpreter vs compiler.
+
+interpreter takes the code starts to run the code line by line. On the other hand compiler first compiles the whole code even before executing single line after the compilation a new code is formed which is the optimised version of the old one then it is executed.
+
+Js is just in time compiled language.
+
+Interpreter is fast and compiler is efficient.
+
+js garbage collector uses mark and sweep algorithm to freeup memory. 
+
+
+V-17-setTimeout
+setTimeouts cannot gurantee that it will take exact time but it gurantee that it will take minimum given time.
+
+V-18-higher order functions.
+A function which takes one or more functions as arguments or returns a function as output is a higher order function.
+
+call,apply,bind - 9
+---------------------------------------------------------
+What is garbage collectors???
+Garbage collecotrs are automated memory management system in programming language that automatically freeup memory that no longer in use.
+
+What is this keyword ??
+In js this keyword refers to the object that the function is method of , or global object if the function is not part of an object.
+
+What is the defference between normal function and fat arrow function ??
