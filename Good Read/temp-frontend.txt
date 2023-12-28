@@ -1,0 +1,353 @@
+- What is React?
+
+limitations of React?
+
+- advantages of using React?
+
+- Explain Strict Mode in React
+
+- Can React Hook replace Redux?
+
+Q
+
+useState() and useEffect() in React?
+
+- How to prevent re-renders in React?
+
+- Form-Handing & Validation techniques?
+
+- What is the application of lazy loading?
+
+- What is the benefit of error boundaries?
+
+- SSR and its benefits in React applications
+
+- different ways to style a React component?
+
+Use cases of useEffect() in different scenarios
+
+differences between functional & class components?
+
+differences b/w useMemo() and useCallback() in React
+
+- differences b/w controlled & uncontrolled components?
+
+- How to re-render the view when the browser is resized? asynchronous operations with async/await and Promises?
+
+- How to pass data b/w sibling components using React router?
+
+
+
+
+
+
+
+
+
+
+
+1)Are the HTML tags and elements the same thing?
+
+2)What are tags and attributes in HTML?
+
+3)What are void elements in HTML?
+
+4)What are different types of lists in HTML? Explain the difference between each one of them
+
+5)What is the 'class' attribute in HTML?What is the difference between the 'id' attribute and the 'class' attribute of HTML elements?
+
+6)How to optimize website assets loading?
+
+7)What is the difference between <strong>, <b> tags and <em>, <i> tags?
+
+8)What is the significance of <head> and <body> tag HTML?
+
+9)Can we display a web page inside a web page or Is nesting of webpages possible?
+
+10) What are inline elements? What are block level elements? What is the difference between them?
+
+11)In how many ways can we position an HTML element? What are the permissible values of the position attribute?Explain the exact difference each one of them in your own words. (Watch this video)
+
+Refer this doc to understand things better
+
+
+
+1)What is the difference between position absolute and relative
+
+2)In how many ways you can display HTML elements?
+
+3) What is the difference between "display: none" and "visibility: hidden", when used as attributes to the HTML element.
+
+4)How to specify the link in HTML '<a>' tag and explain the target attribute? What do the different target statuses in <a> tag mean?
+
+5)In how many ways can we specify the CSS styles for the HTML element?
+
+6) Difference between link tag <link> and anchor tag <a>?
+
+7)When to use scripts in the head and when to use scripts in the body?
+
+8) What are forms and how to create forms in HTML? What are the default behaviours of form that you know?
+
+9)How to handle events in HTML?
+
+10)What are some of the advantages of HTML5 over its previous versions?
+
+11)How can we include audio or video in a webpage?
+
+12)What are Semantic Elements?Explain each one of them. Where would you use them?
+
+13)What are the significant goals of the HTML5 specification?
+
+
+
+1) Explain the concept of web storage in HTML5. What are the different types of storage and when to use what?
+
+2)What is new about the relationship between the <header> and <h1> tags in HTML5?
+
+3) What are the New tags in Media Elements in HTML5?
+
+4)Why do you think the addition of drag-and- drop functionality in HTML5 is important? How will you make an image draggable in HTML5?
+
+5)What are Web Workers?
+
+6)What are different approaches to make an image responsive?Explain tit in your own words(This is the way to make images phone ready)
+
+7)What is a manifest file in HTML5?
+
+Explain The Key Differences Between LocalStorage And SessionStorage Objects.
+
+9) When should we use cookies?
+
+What is specificity in css?(Important Interview question - watch this)
+
+11) How many types of CSS can be included in HTML?
+
+12)What is a style sheet?
+
+13)Explain layout of HTML? Where does the header go, where does nav go, where does footer go etc
+
+
+
+
+
+
+Watch this video and answer the following question in your own words
+
+https://www.youtube.com/watch? v=ZohZS6xLYE4
+
+1)What is the Box model in CSS? Which CSS properties are a part of it?
+
+2) What is specificity?
+
+3)How to align a block element inside another element? Give code example.
+
+4)Difference between Static, Relative, Absolute and Fixed position?
+
+5)Difference between visibility:hidden; and display:none;
+
+Watch this video and answer the following question in your own words
+
+1) What is shadow DOM?Give an example.
+
+2) How to build a triangle in css? Give code example.
+
+3) What are pseudo elements?Give Examples.
+
+4) What are Data attributes?
+
+
+
+Watch this video to understand z-index and answer the following
+
+1. What is zindex?
+
+2. Why do we even need it? Where will you use it?
+
+3. What is the best practice of using it?
+
+Watch this video to understand what is flexbox? Write the code to implement the following with flexbox and html (Favourite interview question)
+
+1)https://drive.google.com/file/d/1VQoW4glm0yzXWP Dmy4LkjXjuuVaDMbmi/view?usp=sharing (Check hint 1 if stuck forever)
+
+2)https://drive.google.com/file/d/1ee2q7grgqZfuqkzu1 XKQkdvr9nN4Ld2_/view?usp=sharing (Check hint 2 if stuck forever)
+
+3) How can you align a div element in the center of the screen using flexbox?
+
+4)What are the differnet properties of flex box. Explain each one of them
+
+1)What is VH/VW (viewport height/ viewport width) in CSS?
+
+2)What property is used for changing the font face?
+
+3)When should we use float property in CSS?
+
+4) What do the following CSS selectors mean?
+
+1. div, p
+
+2. div p
+
+3. div ~ p
+
+4. div + p
+
+5. div > p
+
+5)How to center align a div inside another div? Write the code by yourself
+
+6)What does "!important" mean in CSS?
+
+7)What is the difference between CSS2 and CSS3?
+
+Some good resources that you can refer to for revision 1)https://www.javatpoint.com/css-interview-questions
+
+http:/intrigubit
+
+
+
+
+
+You can refer this resource. But answer everything in your own words. Dont copy paste!!
+
+Also when i ask for example please dont copy the example in the resources? Make your own examples. If you are found copying the examples or the answers you will have to repeat everything again
+
+2 advices
+
+1. Dont read any docs related to questions on react class based components. It would be a waste of time and trust me no one asks questions on it nowadays.
+
+2. Understand the deeper concepts of everything you read. Definition will never do as the interviewer would always ask you deeper concepts.
+
+1. What is React? What are the advantages of using React, compared to normal Javascript?
+
+2. What is difference between library and framework? Is React a library or a framework? Explain the reason?
+
+3. What is useState() in React? What does usestate return? What does it take as argument? Give code example of usestate?
+
+4. What are state variables in react ? How are they different from normal variables? How do we decide when to use states and when to use normal variables?
+
+5. What are keys in React? When should we use it? what is the advantage of keys?
+
+6.What is JSX? How does JSX work?
+
+7. What is DOM? What is the virtual DOM? How does react use the virtual DOM to render the UI?
+
+8. What are the differences between controlled and uncontrolled components? Design of controlled and unontrolled component and paste the code here?
+
+
+
+You can refer this resource. But answer everything in your own words. Dont copy paste!!
+
+1.What are props in React? What is the difference between React state and props.
+
+2. What is prop drilling in React? What are the better ways to prevent prop drilling which you know?
+
+3. What are error boundaries? How is the error boundary different from other components?
+
+4.What are React Hooks?How are hooks different from normal functions?
+
+5. What are the 2 rules that must be followed while using React Hooks? What is the reason behind such rules?
+
+6. When does a functional component rerender?(Explain lifecycle of functional components?) Watch this video---> Favourite interview Question
+
+7. When does the return statement of a functional component get called?
+
+8. What is the use of useEffect React Hooks?
+
+When does the useEffect hook get called in the lifecycle of react functional components? 9.What are the 2 arguments of useEffect hook? Explain each one of them with code example.
+
+
+1.What the different ways to style a React component?
+
+2.Name a few techniques to optimize React app performance? Explain with code examples.
+
+3. What is the way for Parent to Child Communication? Give code example.
+
+4. What are the ways to communicate from child to parent? Give code example.
+
+5. What are the way to communicate between sibling components?
+
+6. What are Higher Order Components in React?Watch this video and explain with code example. (Favourite Interview Question)
+
+7. What are the different phases of the component lifecycle? With a small code example explain the different stages when they happen
+
+8. What are custom hooks in react? Can you design one? Watch this video to understand it better (Favourite interview question)
+
+
+1.What is reconciliation in React? Write in your own words.
+
+2.What are fragments? How are they better than other div elements? Check this out for reference.
+
+3. What element get introduced into the DOM when we use fragments? How does it work?
+
+4. What are the advantages of React compared to Vanilla JS?
+
+5. Why React uses className over class attribute?
+
+6.What is children prop? When should we use it ? Give an example to explain it
+
+
+
+1.What is React Router? When should we use it?Give code example and explain it in detail.
+
+2. How to pass data between sibling components using React router?
+
+3. What is useCallback? When should we use it?
+
+4. What does useMemo do? Give code example to explain when will you use it.
+
+5. Difference between React.memo and useMemo.?
+
+6. What is the use of context API ? When should we use it? How does Context Api work?
+
+7. What is the use of babel?
+
+
+
+1. What is the virtual DOM? How does react use the virtual DOM to render the UI?
+
+2. What are the differences between controlled and uncontrolled components?
+
+3. Explain about types of side effects in React component.
+
+4. Can useeffect return anything? When is the return function of useffect called?
+
+5. What are the different ways to style a React component which you know?
+
+
+Please use this doc for reference
+
+1. What is Redux?
+
+2. Why do we even need redux? How is it better than context API?
+
+3.. What is Flux?
+
+4.State the core principles of Redux.
+
+5. What are pure function?
+
+6.Is it true that Redux can only be used with React?
+
+7. How do you decided which state to make a reducer and which statue you want to make local state?
+
+
+
+1.What do you understand by ACTIONs in Redux's architecture? Explain with example.
+
+2. What are reducers in Redux's architecture? Show with an example.
+
+3. Explain the typical data flow in an application made using React and Redux (Redux Lifecycle for an application).
+
+4.Name all the Redux Store methods. Explain each one of them in details with examples as to when to use them?
+
+5.Explain with an example how to set the initial state in Redux?
+
+6. What does the connect keyword do in react redux?
+
+7.How can we access a redux store outside a react component?
+
+8. What are the things which we should never do inside a reducer?.
+
+9.What are middlewares in reducers? What are they used for? (Most asked interview question) Watch this video to understand
+
+

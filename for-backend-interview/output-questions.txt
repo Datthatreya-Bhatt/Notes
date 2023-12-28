@@ -13,33 +13,27 @@ console.log(typeof arr(50));
 
 
 
+var a = 50;
 
-// var a = 50;
-
-// obj = {
-// 	a: 100,
+var obj = {
+  a: 100,
 	
-// 	print: function (){
-// 		console.log(this.a);
-// 	},
+  print: function () {
+    console.log(this.a);
+  },
 
-// 	print1: () => {
-// 		return ()=>{
-// 			console.log(this.a);
-// 		}
+  print1: function () {
+    return function () {
+      console.log(a);
+    };
+  },
 
+  print2: () => {
+    console.log(this.a);
+  }
+};
 
-// 	},
-
-
-// 	print2: ()=>{
-// 		console.log(this.a);
-// 	}
-
-// }
-
-
-// obj.print1() // make print1 to print 50.
+obj.print1(); // Output: 50
 
 
 

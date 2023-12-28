@@ -851,6 +851,13 @@ console.log(null == undefined)
 64. Give an example for infinite curring ?
 
 65. What are polifills ?
+	
+	Polyfills in JavaScript: Polyfills are code snippets or scripts that provide modern functionality to older browsers that lack support for certain features or methods. They fill the gaps by emulating or adding missing functionalities, enabling web developers to write code that works consistently across different browsers.
+
+66. What is pure and impure function ?
+	Pure Function: A pure function in JavaScript always produces the same output for the same input, without modifying external state or causing side effects. It's predictable, making code more reliable and easier to test.
+
+	Impure Function: An impure function may have side effects, modifying external state or relying on mutable data. It can produce different outputs for the same input, making code less predictable and harder to reason about.
 
 
 =====================================================================================================================================================
@@ -915,3 +922,70 @@ What is the difference between Js import snd require syntax
 	**4. Dynamic vs Static:** `require` is dynamic, which means that it can be used conditionally or dynamically at runtime. `import`, on the other hand, is static, which means that it can only be used statically at compile time.
 
 	Overall, `import` and `require` are both important tools for loading external modules in JavaScript, but they have some key differences in their syntax and behavior.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	=================================================================================================================================================
+	
+When preparing for a job interview for a L2 support position at Hiver HQ, you can expect a variety of questions related to customer support and technical skills. Here are some common questions you may encounter:
+
+#### 1. Customer Support Skills:
+- **How do you handle escalations from customers?** Employers may want to assess your ability to handle difficult customer situations and ensure that you can empathize with customers' concerns and provide effective solutions. You can mention the importance of training support agents to be empathetic and understanding.
+- **How do you prioritize and manage multiple support tickets?** This question aims to evaluate your organizational and time management skills. You can discuss strategies such as using ticketing systems, setting priorities based on urgency and impact, and effectively communicating with customers about ticket status.
+
+#### 2. Technical Skills:
+- **What technical skills do you possess that are relevant to this role?** This question allows you to highlight your technical expertise. Be prepared to discuss your knowledge of relevant software, troubleshooting skills, familiarity with common customer support tools, and ability to understand and communicate technical concepts effectively.
+- **How do you handle technical issues that you are unfamiliar with?** This question assesses your problem-solving abilities and willingness to learn. You can emphasize your resourcefulness in researching solutions, consulting documentation or colleagues, and your ability to adapt and learn quickly.
+
+#### 3. Communication and Collaboration:
+- **How do you communicate complex technical concepts to non-technical customers?** This question evaluates your ability to simplify technical jargon and communicate effectively with customers who may not have a technical background. You can discuss the importance of using clear and concise language, providing step-by-step instructions, and using visual aids if necessary.
+- **How do you collaborate with other teams, such as engineering or product teams, to resolve customer issues?** This question aims to assess your teamwork and collaboration skills. You can mention the importance of effective communication, documenting and sharing customer feedback, and working together to find long-term solutions.
+
+Remember to prepare specific examples from your previous experiences that demonstrate your skills and abilities in these areas. Good luck with your interview at Hiver HQ!
+
+
+
+
+
+
+
+
+
+For an L2 support job at Hiver HQ, the interviewers might ask a range of questions to assess your skills and knowledge in customer support. Here are some potential questions they might ask:
+
+1. **What is your experience in providing customer support?** They may ask about your previous roles and responsibilities in customer support, including any specific tools or software you have used.
+
+2. **How do you handle customer escalations?** They may inquire about your approach to managing and resolving customer issues that have been escalated. They might be interested in hearing about your strategies for creating positive customer experiences during escalations.
+					
+3. **What customer support tools have you used in the past?** They may ask about the customer support tools you are familiar with and how you have utilized them to enhance your support capabilities.
+
+4. **How do you prioritize and manage multiple customer queries?** They may want to know how you handle a high volume of customer inquiries and how you prioritize and manage your workload effectively.
+
+5. **Can you provide an example of a challenging customer support situation you have faced and how you resolved it?** They may ask for a specific scenario where you encountered a difficult customer issue and how you successfully resolved it. This question helps them assess your problem-solving and communication skills.
+
+6. **How do you communicate with customers effectively?** They may inquire about your communication skills and how you adapt your communication style to different customers. They might also ask about your ability to explain technical concepts to non-technical customers.
+
+7. **How do you handle stressful situations in a customer support role?** They may want to know how you manage stress and maintain composure when dealing with demanding or frustrated customers.
+
+8. **Are you familiar with SLAs (Service Level Agreements) and how they work in customer support?** They may ask about your understanding of SLAs and how you have met or exceeded them in your previous roles.
+
+9. **How do you stay updated on product knowledge and industry trends?** They may ask about your approach to staying informed about the product or service you are supporting and any strategies you use to keep up with industry trends.
+
+10. **How do you work in a team environment?** They may ask about your experience working collaboratively with other team members and how you contribute to a positive team dynamic.
+
+Remember, these are just potential questions, and the actual interview questions may vary. It's always a good idea to prepare by reviewing your past experiences and thinking about how they relate to the role you are applying for. Good luck with your interview!
+					
