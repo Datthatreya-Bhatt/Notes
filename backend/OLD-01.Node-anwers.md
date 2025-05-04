@@ -1,0 +1,634 @@
+What are routes ?
+
+What is URL ?
+
+What is method used to count the number of objects or entries in the db in sequelize ? db.count()
+
+What is the method used to make bulk entries in sequelize ? db.createBulk()
+
+What is header ? 
+
+
+
+
+1.What are the advantages of Node Js?
+
+	Node.js offers several advantages, Some of its key advantages are
+
+	Non-Blocking and Asynchronous: Node.js is built on an event-driven, non-blocking I/O model, which means that it can handle a large number of concurrent connections without blocking the execution of other tasks. 
+
+	Single Language: With Node.js, both the server-side and client-side part of an application can be written in javascript. This reduces the need for switching between different languages and allows developers to work easily across the full stack.
+
+	Fast Execution: Node.js is built on the V8 javascript engine, which is known for its speed and performance.
+
+	Node Package Manager (NPM): Node.js has a vast and active ecosystem of open-source packages available through the node package manager. These packages provide pre-built modules for various functionalities, helping developers to easily integrate complex features into their applications without reinventing the wheel.
+
+	Scalability: Node.js is designed to be scalable, both horizontally and vertically. It is well-suited for building microservices architectures and can easily handle a large number of concurrent connections due to its non-blocking nature.
+
+	Cross-Platform: Node.js is cross-platform, which means that applications developed with it can be deployed on various operating systems, including Windows, macOS, and Linux, with minimal modifications.
+
+	Easy Learning Curve for Frontend Developers: For developers already familiar with javascript, transitioning to Node.js is relatively smooth. The shared language and similar programming make it easier for frontend developers to venture into backend development.
+
+	Microservices Architecture: Node.js works well with microservices architecture, where an application is broken down into smaller services. Its lightweight nature and efficient event handling make it a good fit for building and managing microservices.
+
+
+
+
+2.What is module.exports ?
+
+	In Node.js, module.exports is a special object that is used to define what a module exports as its public interface.
+
+	When we are creating a module in Node.js, we can use the module.exports object to specify what should be available when another module imports our module. module.exports can be assigned different types of values like objects, functions, classes, or even primitive values like strings and numbers. When we import a module, we will be working with whatever we assigned to module.exports in that module file.
+
+difference between require and import 
+
+3.what are default exports?
+
+	Default export is a way of creating modules in javascript, Only one default export can be made from one file. Advantage of using default export is while importing module we can name the module whatever we want without using as keyword.
+
+
+why we need cors, our local host application need it?
+
+4.What is cors?
+
+	CORS stands for Cross-Origin Resource Sharing. It's a security feature implemented by web browsers to control how web pages or web applications from one domain can request and interact with resources from another domain. This is an important security mechanism to prevent harmfull scripts from executing unauthorized actions on behalf of a user.
+
+	In the context of Node.js, when we are building a server-side application that serves resources like APIs, web pages, or files, we might need to handle CORS to ensure that the resources are accessible to web pages or applications hosted on different domains. If our server does not explicitly allow cross-origin requests, browsers will block those requests for security reasons.
+
+	To handle CORS in a Node.js application, we typically set appropriate headers in the HTTP responses our server sends. These headers inform the browser whether the request from another domain is permitted or not. There is a npm package called cors that we usually use to handle cors.
+
+
+
+5.What are REST APIs? How does it work?
+
+	REST (Representational State Transfer) APIs are a set of architectural principles and constraints for designing networked applications. They provide a standardized way for different software systems to communicate and exchange data over the internet. REST is commonly used in the context of web services, where it allows client applications to interact with server resources.
+
+
+event loop in node/ telegram
+
+6.What is Event loop? (Watch this video to understnad event loop in detail)
+
+	It is a mechanism that allows asynchronous operations to be handled in a non-blocking way.
+
+	In the context of javascript, the event loop is the core of its concurrency model, enabling tasks to be executed in the background while the main program continues to run. This is particularly important for tasks that might take some time to complete, like fetching data from a server, reading files, or interacting with user interfaces.
+
+	below is how the event loop works in javascript
+
+	Call Stack: javascript uses a call stack to keep track of functions that are currently being executed. When a function is called, it's added to the stack. When it returns a value, it's removed from the stack.
+
+	Web APIs and Callback Queue: javascript interacts with browser APIs (e.g., `setTimeout`, `fetch`, etc) to perform asynchronous tasks. When an asynchronous operation is called, it is sent to the browsers Web API for execution. Meanwhile, the main program continues running, and any synchronous tasks are processed.
+
+	Event Loop: While the asynchronous tasks are being handled by the Web APIs, the javascript engine keeps running and checking the callback queue for completed tasks.
+
+	Callback Queue: When an asynchronous task is completed, a callback associated with that task is placed in the callback queue.
+
+	Call Stack Again: When the call stack is empty (meaning the main program and any synchronous tasks are done), the event loop takes callbacks from the callback queue and pushes them onto the call stack. These callbacks are executed in the order they were placed in the queue.
+
+	This process continues, allowing asynchronous tasks to be processed without blocking the main programs execution.
+
+
+
+
+7.What is expressJS?
+
+	Express.js, commonly referred to as Express, is a minimal and flexible web application framework for Node.js, a server-side JavaScript runtime. Express.js is widely used in the Node.js ecosystem for building web applications, APIs, and other server-side applications due to its simplicity, flexibility, and extensive community support.
+
+
+
+8.Node js is single threaded or multithreaded?
+
+	Node.js is single-threaded
+
+
+9.If node js is single threaded then how does it handle concurrency?
+
+	Node.js uses a single thread for its main event loop, which is responsible for handling events, callbacks, and asynchronous operations.Node.js employs a non-blocking I/O model and an event-driven architecture to efficiently manage concurrency without the need for multiple threads
+
+
+
+10.What are the different Http methods? Explain when to use what?
+
+	A. GET:
+	Used to retrieve data from a server.
+
+	B. POST:
+	Used to send data to the server for processing or storage.
+
+	C. PUT:
+	Used to update or completely replace existing data on the server.
+
+	D PATCH:
+	Used to make partial updates to existing data on the server.
+
+	E. DELETE:
+	Used to request the removal of a resource from the server.
+
+	F. HEAD:
+	Similar to GET, but only retrieves the headers of a resource without the actual content.
+
+	G. OPTIONS:
+	Used to request information about the communication options available for a resource or the server as a whole.
+
+
+
+
+
+
+12.What are middlewares and what does next() function do?
+
+	Middleware functions are functions that have access to the request and response objects of an Express application, as well as a third parameter often named next. 
+
+	next(): The next function is a callback parameter provided to middleware functions. When called, it passes control to the next middleware function in the chain. If next() is not called within a middleware function, the request might get stuck, and next middleware functions or route handlers wont be executed.
+
+
+
+
+13.Which module is used to read and write operations in a file?
+
+	In node built in module fs which is a file system used to read and write in a file.
+
+
+14.What are web servers? How are they different from your laptop
+
+	Web servers are similar to laptops, but they are hosted on different remote location. Mostly web servers are faster than our laptops because they use diffrent operating system like linux or ubuntu to increase performance.
+
+
+
+
+
+20.How do you do error logging in your application? (Say you use sentry , Watch this video to understand)
+
+ 	I use sentry to do error logging, it collects all the log information from all the connected servers and provides these info in a single place.
+
+
+
+22.What is a jwt token ? How do you create a jwt token?
+
+	JWT means json web token, It is commonly used for authentication and authorization in web applications and APIs. JWTs are often used to transmit user identity information, access rights, and other claims from a server to a client.
+
+	To create a JWT token, we typically use a library that provides JWT functionality. In js, we can use libraries like jsonwebtoken to create, sign, and verify JWT tokens.
+
+
+
+
+23.Explain the flow of login and authentication? How does the backend identify the user?
+
+	User enters his email and password and clicks login, the email and password are sent to server in request body, Once the request reaches server a login authentication function checks if the given email is in our user database, if it exists then it uses a library to verify the password, to check if the given email has correct password, if it is success then server send a token for this user for future authentication, next time when the user wants to get access to website he dont have to enter password and email again, the token is sent in request header and server verifys that token.
+
+
+
+24.When you create a jwt token , how do you expire it after a certain amount of time?  [Common question]
+
+	When creating a JWT token, we can set an expiration time to indicate when the token should expire. This is done by including the expiration timestamp in the "payload" section of the JWT. The token will be considered invalid and expired after this timestamp has passed.
+
+
+
+
+
+27.Explain the steps for deploying the code to AWS?
+
+	Sign Up for AWS:
+	If we dont already have an AWS account, we need to sign up for one. 
+
+	Choose the Deployment Method:
+	EC2 Instances: Choosing its ram, harddrive and operating system.
+
+	Preparing our Code:
+	Making our code properly organized and configured for deployment. This may involve setting up environment variables, specifying dependencies, and creating any necessary configuration files.
+
+	Choose AWS Services:
+	Select the AWS services we will be using for our application, such as databases (RDS), storage (S3), networking (VPC), and more. Configuring these services to match our applications requirements.
+
+	Configure Security:
+	Setting up security measures like Identity and Access Management (IAM) roles and policies to control who can access our AWS resources. 
+
+	Create and Configure Resources:
+	Depending on our chosen deployment method, create and configure the necessary AWS resources. This might include setting up instances, configuring load balancers, and more.
+
+	Deploying our Code:
+	Deploying our code to AWS using the appropriate method: I used git and cloned my git repository.
+
+ 
+
+
+28.What all files will you add to .gitignore file?
+
+	.env file:
+	This file contains many credentials like, jwt secret key, SQL password etc.
+
+	node_modules:
+	This is a folder and it contains all node packages that we use. And it is a big folder
+
+	.log:
+	These files are log files, created during application run time And any other file that we think is confidential
+
+
+
+29.What is the use of pm2 ? What advantage does it give?
+
+	PM2 (Process Manager 2) is a production process manager for Node.js applications. 
+
+	Advantages:
+	It allows us to keep our applications running continuously, automatically restart them if they crash, and manage them easily. 
+	PM2 also offers features like load balancing, logs facility, startup script, micro-service management, and much more. 
+	PM2 is available as an NPM package and can be installed through npm or yarn easily. 
+	we can use PM2 to run multiple processes of our application, which provides additional benefits like improved resiliency and availability.
+
+
+30.What are the different pm2 commands that you have used?
+
+	pm2 start <file name>
+	To start the file in pm2
+
+	pm2 stop all 
+	Used to stop all pm2 instances
+
+	pm2 status
+	Used to check pm2 status
+
+
+
+31.What is the use package json file?
+
+	The package.json file is a file in Node.js applications that is used to manage the application's dependencies, configuration, and scripts. It contains information about the application such as its name, version, author, description, entry points, dependencies, and more.
+
+
+32.What is the use of packagelock.json?Why do we even need it?
+
+The package-lock.json file is a lockfile automatically generated by npm after running npm install command. It contains a record of the exact version of all the dependencies. So when user wants to use our application he can easily download all the required dependencies of exact version.
+
+
+
+
+33.What is the difference between dependencies and devdependencies in package.json? When to use what?
+
+	There are two types of dependencies
+
+	A. Dev dependemcies
+	It is a dependencie used only during development phase, we dont need these dependencies in our application to work. These dependencies are mainly used to increase developers efficiancie. Ex: nodemon, debugger etc. 
+
+	B. Production dependencies.
+	It is a dependencie used in our application, we need these dependencies in our application to work properly. Ex: Express, sequelize, jsonwebtoken etc.
+
+
+
+35. What is Node.js and how it works?
+
+	Node.js is javascript runtime environment that allows us to build and run web applications on the server side using javascript. It is built on the V8 javascript engine, which was originally developed by Google for use in their Chrome web browser. Node.js extends the capabilities of javascript beyond just being a browser-based scripting language.
+
+	below is how Node.js works:
+	Event-Driven and Non-Blocking I/O: Node.js is designed to be event-driven and non-blocking. This means that instead of waiting for I/O operations (like reading from a file, querying a database, or making an HTTP request) to complete before moving on to the next task, Node.js uses asynchronous operations and callbacks.
+
+	Single-Threaded Event Loop: Node.js operates on a single-threaded event loop. This event loop is responsible for managing all the asynchronous operations and callbacks. 
+
+
+
+36. What are some commonly used timing features of Node.js?
+
+	setTimeout: This function is used to schedule a callback function to be executed after a specified delay in milliseconds. It returns a timeout object that can be used to cancel the execution before it happens.
+
+	setInterval: Similar to setTimeout, setInterval is used to schedule a callback function to be executed repeatedly at a specified interval.
+
+	setImmediate: This function takes a callback function and executes this function after all the code in current execution context is executed.
+
+	process.nextTick: This function allows us to schedule a callback to be executed in the next iteration of the event loop, right after the current operation completes. It is often used to ensure immediate execution after the current code block.
+
+
+
+37. What is fork in node JS?
+
+	In Node.js, a "fork" typically refers to creating a new child process that is a copy of the current process. 
+
+	Node.js provides a module called child_process that allows us to create and manage child processes. The fork method is one of the ways to create a new child process using this module.The primary use case for using the fork method is to leverage multiple CPU cores by creating multiple child processes that can work concurrently. Each child process runs independently and can perform its tasks, potentially improving the overall performance and responsiveness of the application.
+
+
+
+38. How many types of API functions are there in Node.js?**** check if the answer is correct
+
+	There are two types of API functions in Node.js :
+	Asynchronous, non-blocking functions
+	Synchronous, blocking functions
+
+
+
+40. If Node.js is single threaded then how does it handle concurrency? 
+
+	Node.js uses a single thread for its main event loop, which is responsible for handling events, callbacks, and asynchronous operations.Node.js employs a non-blocking I/O model and an event-driven architecture to efficiently manage concurrency without the need for multiple threads
+
+
+41. What is node.js streams?
+
+	Node.js streams are a fundamental concept in the Node.js runtime environment that allow us to efficiently read from or write to data sources or destinations, such as files, network sockets, or even in-memory data. Streams provide a way to handle data in chunks, rather than loading the entire dataset into memory at once. 
+
+
+
+42. What are node.js buffers?
+
+	In Node.js, a buffer is a built-in object that represents a fixed-size chunk of memory, typically used to hold and manipulate binary data or data that needs to be managed at a lower level than strings or arrays. 
+
+
+43. Describe the 5 exit codes of Node.js?
+
+	Exit Code 0: Success
+	When a Node.js process exits with exit code 0, it indicates that the program ran successfully without any errors or issues. This is the standard exit code for a successful execution.
+
+	Exit Code 1: General Error
+	Exit code 1 is often used to indicate that the program encountered a general error during its execution. It doesn't specify a particular type of error, but rather serves as a catch-all for various unexpected issues that may have occurred.
+
+	Exit Code 2: Misuse of Shell Builtins
+	This exit code is typically returned when a command-line program, like a Node.js script, is improperly used or invoked with incorrect arguments or options.
+
+	Exit Code 3: Internal JavaScript Parse Error
+	If a Node.js script contains syntax errors or other issues in the JavaScript code that prevent it from being parsed properly, the process may exit with exit code 3.
+
+	Exit Code 9: Invalid Argument
+	This exit code can be returned when a process is terminated by an external signal. For example, if a Node.js process is forcefully terminated by a SIGKILL signal from the operating system, it might exit with exit code 9.
+
+
+
+
+44. Enhancing Node.js performance through clustering. How can you do this via forking?Can you write the code?
+
+	const cluster = require('cluster');
+
+	const http = require('http');
+
+	const numCPUs = require('os').cpus().length;
+
+
+
+	if (cluster.isMaster) {
+
+	 // Fork workers for each CPU core
+
+	 for (let i = 0; i < numCPUs; i++) {
+
+	  cluster.fork();
+
+	 }
+
+	 cluster.on('exit', (worker, code, signal) => {
+
+	  console.log(`Worker ${worker.process.pid} died`);
+
+	 });
+
+	} else {
+
+	 // Each worker will act as a server
+
+	 http.createServer((req, res) => {
+
+	  res.writeHead(200);
+
+	  res.end('Hello, world!\n');
+
+	 }).listen(8000);
+
+	 console.log(`Worker ${process.pid} started`);
+
+	}
+
+	In this example:
+	The cluster module is used to manage child processes. The isMaster property helps to identify whether the current process is the master process or a worker process. If the process is the master, it creates one worker process for each CPU core using the fork method. This distributes the workload across available CPU cores. When a worker process dies (exits), the exit event is emitted. we can use this event to log information or take any necessary action. If the process is not the master (i.e., it is a worker process), it creates a simple HTTP server. Each worker handles incoming HTTP requests independently. The listen method binds the server to port 8000. Both master and worker processes log their respective process IDs for identification.
+
+	This code starts the master process, which will then fork worker processes, each handling incoming HTTP requests. This approach utilizes multiple CPU cores effectively, enhancing Node.js application performance through parallelism.
+
+
+
+45. What is the difference between fork() and spawn() methods in Node.js?
+
+	In Node.js, both fork() and spawn() are used to create child processes.
+
+	spawn() method
+	It creates a new process from scratch, without copying the parent process.
+	It returns a ChildProcess object which can be used to interact with the child process.
+	It is generally more flexible and powerful, and can be used to run any command or script.
+	It is asynchronous by default.
+
+
+
+	fork() method
+	It creates a copy of the parent process and runs the same code in the child process.
+	It returns a ChildProcess object which can be used to interact with the child process.
+	It is optimized for Node.js applications, and is easier to use than spawn().
+	It is synchronous by default.
+
+
+
+
+46.What are some of the flags used in the read/write operations in files?
+
+	r: Open file for reading. An exception occurs if the file does not exist.
+	r+: Open file for reading and writing. An exception occurs if the file does not exist.
+	rs: Open file for reading in synchronous mode.
+	rs+: Open file for reading and writing in synchronous mode.
+	w: Open file for writing. The file is created (if it does not exist) or truncated (if it exists).
+	w+: Open file for reading and writing. The file is created (if it does not exist) or truncated (if it exists).
+	wx: Like 'w' but fails if the path exists.
+	wx+: Like 'w+' but fails if the path exists.
+	a: Open file for appending. The file is created if it does not exist.
+	a+: Open file for reading and appending. The file is created if it does not exist. 
+
+
+
+47.What is a reactor and proactor pattern in Node.js? Watch this video and explain in your own words?
+
+	Reactor Pattern:
+	The Reactor pattern is designed to handle multiple I/O operations concurrently without blocking the main thread of execution. It uses a central event dispatcher, often called an "event loop," which monitors multiple I/O sources. When an I/O operation is ready to be performed, the event loop dispatches the corresponding event handler.
+
+	Proactor Pattern:
+	The proactor pattern is another event handling pattern that is similar to the reactor pattern. The main difference is that in the proactor pattern, events are handled asynchronously in multiple threads with completion callbacks. 
+
+
+48.What is the purpose of NODE_ENV? Why do we even need the different environments like production and staging?
+
+	NODE_ENV is an environment variable in Node.js that specifies the environment in which an application is running. The values of this variable can be set to 'development', 'production', 'testing', etc. depending on the environment in which the application is being deployed. 
+
+	Different environments like production, staging, testing, etc. are necessary because an application behaves differently in different environments. For instance, different environments can have different configurations and settings, such as different database connections, different API endpoints, or different logging mechanisms. By having different environments, developers can ensure that the application behaves consistently across different stages of development, and can test the application in a controlled environment before deploying it to production.
+
+
+
+
+
+49. What is MVC structure ?
+
+
+
+====================================================================================================================================================
+
+
+What are the core modules of node js?
+	In Node.js, core modules are modules that are built-in and don't require any installation or configuration. 
+	- fs (file system)
+	- http
+	- path
+	- url
+	- os
+	- querystring
+	- crypto
+	- util
+
+Explain the use of each one of them in detail.
+	fs (File System): It provides the ability to work with the file system in a Node application, such as reading and writing files.
+	http: This module is used to create an HTTP server, make HTTP requests, and handle HTTP responses.
+	https: https is same as http but it has encriptions.
+	path: It is used for handling and transforming file paths.
+	os: It provides information about the operating system on which the Node application is running, such as the CPU architecture, available memory, and network interfaces.
+	url: used to parse and create url.
+
+
+What are relative path and absolute path? How to define them?
+	An absolute path refers to the full path of a file or directory from the root directory of the file system.
+	A relative path, on the other hand, is defined relative to the current working directory.
+
+What does createServer do ?
+	The createServer() method in Node.js is used to create a new HTTP server object. It takes a callback function as an argument that is called every time a new HTTP request is received by the server. The calback function handles the request and sends a response back to the client.
+
+
+What do you think server.listens exactly do?Why do we need it?
+	In Node.js, server.listen() method is used to start the server and make it listen for incoming client requests on a specified port and host.We need to call server.listen() to start our server and make it available to the clients for incoming requests. If we do not call this method, the server will not start listening to any requests, and hence our server will not be able to serve any clients.
+
+Explain the nodejs event driven architecture.
+How node js can basically scale to handle 1000 of requests a sec. What helps node JS even though it is single threaded?
+
+	Event-driven architecture is a key feature of Node.js, which involves the use of an event loop to handle asynchronous I/O operations. In this architecture, Node.js creates various objects and APIs that can emit events, and these events are handled by event listeners that are registered with those objects.
+	Every time an event is emitted, Node.js adds it to an event queue. The event loop continuously checks this queue for any new events, and calls the corresponding event listeners (also called callbacks) when it finds them. This allows Node.js to perform I/O operations in parallel, without blocking the single thread used by the application.
+
+What does process.exit do?
+	process.exit() is a method in Node.js that forces the current process to exit. It is used to terminate a Node.js application when it has finished its task or when an error has occurred and the application cannot continue running.
+
+
+What does req.url , req.header and req.method contain?
+	- .req.url: This property contains the URL of the requested resource.
+	req.headers: This property is an object that contains the headers sent by the client in the HTTP request. 
+	req.method: This property contains the HTTP method used by the client to make the request.
+
+Explain node js event loop.
+	The event loop in Node.js consists of a cycle that runs as long as the Node.js application is up and running. In each cycle, the event loop processes six different queues, each with its own priority:
+	1. The Timer Queue: This queue contains callbacks that will be called based on the time elapsed since the timer was started.
+	2. The I/O Callback Queue: This queue contains callbacks for completed I/O operations, such as a read or write operation to a file.
+	3. The Idle Callback Queue: This queue contains callbacks that are scheduled to run during a cycle when the event loop is idle.
+	4. The Prepare Queue: This queue is meant for preparing any internal state before the event loop starts processing.
+	5. The Poll Queue: This queue handles all incoming I/O events. When an I/O event occurs, the corresponding callback is added to the queue.
+	6. The Check Queue: This queue contains callbacks for scheduled setImmediate() operations.
+
+What is the use of having buffers and streams? When would you use it?
+	buffers and streams are both used for handling data, but they have different use cases. Buffers are used to handle binary data that needs to be manipulated, while streams are used to handle data that is too large to fit in memory or being transmitted incrementally.
+
+	Buffers in Node.js are used to represent binary data, such as images, audio files, and network packets. Buffers are used to store raw binary data and manipulate it in a more efficient way than using strings. Buffers are essentially a contiguous block of memory that can be read from or written to.
+
+	Streams, on the other hand, are used for handling large amounts of data, such as reading or writing files, processing network data, or sending data over HTTP. Streams allow data to be processed in chunks, as opposed to loading the entire dataset into memory at once. This makes it possible to handle large amounts of data without running out of memory.
+
+	Here are some situations where you might use buffers and streams in Node.js:
+
+	1.File I/O: When reading or writing files, streams can be used to read or write data in chunks, rather than reading or writing the entire file at once. Buffers can be used to store the data that is read or written in chunks.
+
+	2.Network communication: When working with network communication, streams can be used to read or write data in chunks, rather than waiting for the entire data to be received or sent. Buffers can be used to store the data that is received or sent in chunks.
+
+	3.Image or audio processing: When processing images or audio files, buffers can be used to store the raw binary data. Streams can be used to read or write the data in chunks and process it in real-time, without needing to load the entire file into memory.
+
+
+Expalin all the status codes.
+	status codes in the 2xx range indicate success, codes in the 3xx range indicate redirection, codes in the 4xx range indicate client errors, and codes in the 5xx range indicate server errors.
+
+what is parsing ?
+	Parsing is the process of analyzing a string of symbols, such as code or natural language text, according to a set of rules in order to derive its structure or meaning.
+
+What problem does nodemon solve?
+	Nodemon restarts our file whenever we make changes to our file and save the changes. So we dont have to run the code from terminal again and again.
+
+What is package.json file ?
+	The package.json file is a file in Node.js applications that is used to manage the application's dependencies, configuration, and scripts. It contains metadata and information about the application such as its name, version, author, description, entry points, dependencies, and more.
+
+what is package-lock.json ?
+	The `package-lock.json` file is a lockfile automatically generated by npm after running `npm install` command. It contains a record of the exact version of all the dependencies.
+
+When would you use --save-dev and --save?
+	We use --save--dev when we install third party package as development dependencies.
+	We use --save when we want that third party package as production dependencies.
+
+
+what is npm?
+	npm is a package manager for Node.js, which is the default package manager for the JavaScript runtime). It provides a way for developers to easily manage and share code, by allowing them to find and install packages (or libraries) written in JavaScript
+
+what is json?
+	JSON (JavaScript Object Notation) is a lightweight and text-based data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. 
+
+Why are we using Express JS ? Any reasons?
+	1. Faster development process: With built-in middleware and functions, Express.js makes it easier and faster to build web applications, saving time and effort.
+	2. Highly customizable: Express.js is highly customizable and allows developers to configure their routes and middleware according to their needs.
+	3. Scalability: Express.js is known for its scalability, making it easy to handle multiple requests simultaneously and efficiently.
+	4. Large community and active development: Express.js has a large and active community of developers and frequent updates, making it a reliable and well-supported framework.
+	5. Widely used: Express.js is a popular and widely used framework, which means that many resources are available to help developers learn and use it effectively
+
+
+What are middlewares ?
+	In Express.js, middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. Middleware functions can execute any code, make changes to the request and response objects, end the request-response cycle, or call the next middleware function in the stack. Middleware functions are added to the application using the `app.use` function or `router.use`
+
+
+What is next used for?
+	In Express.js, the `next` function is used to pass control to the next middleware function in the application's request-response cycle.
+
+What is res.send used for?
+	In Express.js, `res.send()` is a function that is used to send an HTTP response to the client.
+
+what is express ?
+	Express is a web application framework for Node.js that provides a set of features for building web and mobile applications.
+
+what is app.use?
+	In Express.js, `app.use()` is a function used to mount middleware functions in an application. It registers middleware functions that will be called for each incoming request and can modify the request and response objects, execute any code, and terminate the request-response cycle
+
+What is the body parser used for?
+	In Express.js, the `body-parser` middleware is used to extract the entire body portion of an incoming request stream and expose it on `req.body`.
+
+
+what is __dirname in path module ?
+	`__dirname` is a special global variable in Node.js that represents the directory name of the current module's file. 
+
+what is mvc model ? Can you explain the role of Model,Views and Controller.
+	MVC (Model-View-Controller) is an design pattern used to separate an application into three parts:
+
+	1. Model: This component represents the data and defines how it is accessed and manipulated. The model communicates with the database or any external data source and encapsulates all related operations, making them accessible through a simple interface.
+	2. View:it is responsible for displaying the data to the user. It interacts with the model to fetch and display data to the end user. 
+	3. Controller: This component acts as an intermediary between the model and the view.
+
+	In short, the Model component handles the data-related logic, the View component is responsible for user interface (UI) and presentation logic, and the Controller component connects the two, acting as an intermediary that receives input from the View and manipulates data within the Model.
+
+	MVC stands for Model View Controllers, This is a concept of separation in which we separate our codes in different parts so we can get better idea that which part of the code does what. Model represents data in our code and views represents what the user can see and controller binds model and views together.
+
+
+what the hell are Models?
+[sharpener]: So Models like controllers is a design pattern. It is used for designing how you want to store the data.
+
+what is dynamic routing
+	Dynamic routing is a networking, Unlike static routing, which uses preconfigured routing tables that do not change unless manually updated, dynamic routing protocols use algorithms to determine  path for data traffic dynamically. 
+
+what is query and param?
+	 query parameters are used to provide additional information in the form of key value pair, while path parameters are used to identify a specific resource within an API using dynamic routing.
+
+
+
+what is the difference between mysql.createConnection and mysql.createPool.
+	`mysql.createConnection()` creates a single connection to the database server, while `mysql.createPool()` creates a pool of connections that can handle multiple simultaneous clients more efficiently.
+
+Explain what is sequelize and the need to sequelize.
+	Sequelize is a third-party library for Node.js that is used as an Object-Relational Mapper (ORM) for relational databases such as MySQ. Sequelize provides a way to communicate between database objects and JavaScript objects, making it easier to interact with a database using Node.js.
+
+	The need for Sequelize arises from the fact that databases work using tables and rows, while Node.js primarily works with JavaScript objects. By providing an ORM, Sequelize bridges the gap between these two structures.
+
+ What are different types of relations in SQL and how to implement these relations with sequelize?
+	there are four main types of relationships in SQL: One-to-One, One-to-Many, Many-to-One, and Many-to-Many:
+
+	- One-to-One: A One-to-One relationship exists when each record in the first table can be related to only one record in the second table, and vice versa. In Sequelize, you can define a One-to-One relationship using the `hasOne` and `belongsTo` associations.
+
+	- One-to-Many: A One-to-Many relationship exists when one record in the first table can be related to many records in the second table, but each record in the second table can be related to only one record in the first table.In Sequelize, you can define a One-to-Many relationship using the `hasMany` and `belongsTo` associations.
+
+	- Many-to-One:In this case, many records in the first table can be related to one record in the second table, but each record in the second table can be related to only one record in the first table.In Sequelize, you can define a Many-to-One relationship using the same `hasMany` and `belongsTo` associations.
+
+	- Many-to-Many: A Many-to-Many relationship exists when many records in the first table can be related to many records in the second table, and vice versa.In Sequelize, you can define a Many-to-Many relationship using the `belongsToMany` association.
+
+
+t-3
+A video about cors
+Answer this question . What is OPTIONs call  and when does it happen and why does it happen.(Favourite Interview question)
