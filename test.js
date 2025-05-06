@@ -1,15 +1,3 @@
-var student = function(name){
+name = 10;
 
-  this.name = name;
-
-  function printName() {
-
-    console.log(this.name)
-
-  }
-
-   printName()
-
-}
-
-var yash = new student("yash")
+console.log(global.name)
